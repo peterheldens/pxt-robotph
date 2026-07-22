@@ -1,0 +1,21 @@
+{
+    "name": "pxt-robotph",
+    "version": "0.0.1",
+    "description": "Een extensie om een robotgezicht te besturen met NeoPixels.",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "README.md",
+        "main.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": true,
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "tsprj"
+}
