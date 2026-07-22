@@ -1,19 +1,73 @@
-//% color=#2699BF icon="\uf110" block="robot"
-namespace robot {
+//% color=#2699BF icon="\uf110" block="robotph"
+namespace robotph {
+    //% blockId="robotph_init"
+    //% block="initialiseer robot op pin %pin met %aantal LEDs"
+    //% pin.defl=DigitalPin.P16
+    //% aantal.defl=16
+    //% weight=100
+    export function initialiseer(pin: DigitalPin, aantal: number): void {
+        LED_PIN = pin;
+        LED_COUNT = aantal;
+        initGezicht();
+    }
+
+    //% blockId="robotph_set_kleur"
+    //% block="zet %onderdeel op kleur %kleur"
+    //% weight=90
+    export function setKleur(onderdeel: RobotOnderdeel, kleur: NeoPixelColors): void {
+        if (!gezicht) initGezicht();
+        switch (onderdeel) {
+            case RobotOnderdeel.Ogen:
+                kleurOgen(kleur);
+                break;
+            case RobotOnderdeel.Mond:
+                kleurMond(kleur);
+                break;
+            case RobotOnderdeel.Wenkbrauwen:
+                kleurWenkbrauwen(kleur);
+                break;
+            case RobotOnderdeel.Gezicht:
+                kleurGezicht(kleur);
+                break;
+        }
+        gezicht.show();
+    }
+
+    //% blockId="robotph_wis"
+    //% block="wis %onderdeel"
+    //% weight=80
+    export function wis(onderdeel: RobotOnderdeel): void {
+        if (!gezicht) initGezicht();
+        switch (onderdeel) {
+            case RobotOnderdeel.Ogen:
+                kleurOgen(NeoPixelColors.Black);
+                break;
+            case RobotOnderdeel.Mond:
+                kleurMond(NeoPixelColors.Black);
+                break;
+            case RobotOnderdeel.Wenkbrauwen:
+                kleurWenkbrauwen(NeoPixelColors.Black);
+                break;
+            case RobotOnderdeel.Gezicht:
+                gezicht.clear();
+                break;
+        }
+        gezicht.show();
+    }
+
+    //% blockId="robotph_helderheid"
+    //% block="zet helderheid op %helderheid"
+    //% helderheid.min=0 helderheid.max=255
+    //% weight=70
+    export function helderheid(helderheid: number): void {
+        if (!gezicht) initGezicht();
+        gezicht.setBrightness(helderheid);
+        gezicht.show();
+    }
+
     let LED_PIN: DigitalPin = DigitalPin.P16;
     let LED_COUNT: number = 16;
     let gezicht: neopixel.Strip;
-    
-    export enum RobotOnderdeel {
-        //% block="ogen"
-        Ogen = 0,
-        //% block="mond"
-        Mond = 1,
-        //% block="wenkbrauwen"
-        Wenkbrauwen = 2,
-        //% block="gezicht"
-        Gezicht = 3
-    }
 
     function initGezicht(): void {
         if (gezicht) return;
@@ -23,88 +77,41 @@ namespace robot {
         gezicht.show();
     }
 
-    /**
-     * Stel de kleur in van een onderdeel van de robot.
-     * @param onderdeel Het onderdeel van de robot, eg: RobotOnderdeel.Ogen
-     * @param kleur De kleur van de NeoPixel, eg: NeoPixelColors.Red
-     */
-    //% blockId=robot_set_kleur
-    //% block="zet %onderdeel kleur %kleur"
-    //% weight=100
-    export function setKleur(onderdeel: RobotOnderdeel, kleur: number): void {
-        initGezicht();
-        switch (onderdeel) {
-            case RobotOnderdeel.Ogen:
-                gezicht.setPixelColor(0, kleur);
-                gezicht.setPixelColor(1, kleur);
-                gezicht.setPixelColor(4, kleur);
-                gezicht.setPixelColor(5, kleur);
-                break;
-            case RobotOnderdeel.Mond:
-                gezicht.setPixelColor(6, kleur);
-                gezicht.setPixelColor(7, kleur);
-                gezicht.setPixelColor(8, kleur);
-                gezicht.setPixelColor(9, kleur);
-                gezicht.setPixelColor(10, kleur);
-                break;
-            case RobotOnderdeel.Wenkbrauwen:
-                gezicht.setPixelColor(2, kleur);
-                gezicht.setPixelColor(3, kleur);
-                break;
-            case RobotOnderdeel.Gezicht:
-                for (let i = 0; i < LED_COUNT; i++) {
-                    gezicht.setPixelColor(i, kleur);
-                }
-                break;
-        }
-        gezicht.show();
+    function kleurOgen(kleur: number): void {
+        gezicht.setPixelColor(0, kleur);
+        gezicht.setPixelColor(1, kleur);
+        gezicht.setPixelColor(6, kleur);
+        gezicht.setPixelColor(7, kleur);
     }
 
-    /**
-     * Wis een onderdeel van de robot.
-     * @param onderdeel Het onderdeel van de robot, eg: RobotOnderdeel.Ogen
-     */
-    //% blockId=robot_wis
-    //% block="wis %onderdeel"
-    //% weight=90
-    export function wis(onderdeel: RobotOnderdeel): void {
-        initGezicht();
-        switch (onderdeel) {
-            case RobotOnderdeel.Ogen:
-                gezicht.setPixelColor(0, 0);
-                gezicht.setPixelColor(1, 0);
-                gezicht.setPixelColor(4, 0);
-                gezicht.setPixelColor(5, 0);
-                break;
-            case RobotOnderdeel.Mond:
-                gezicht.setPixelColor(6, 0);
-                gezicht.setPixelColor(7, 0);
-                gezicht.setPixelColor(8, 0);
-                gezicht.setPixelColor(9, 0);
-                gezicht.setPixelColor(10, 0);
-                break;
-            case RobotOnderdeel.Wenkbrauwen:
-                gezicht.setPixelColor(2, 0);
-                gezicht.setPixelColor(3, 0);
-                break;
-            case RobotOnderdeel.Gezicht:
-                gezicht.clear();
-                break;
-        }
-        gezicht.show();
+    function kleurMond(kleur: number): void {
+        gezicht.setPixelColor(2, kleur);
+        gezicht.setPixelColor(3, kleur);
+        gezicht.setPixelColor(4, kleur);
+        gezicht.setPixelColor(5, kleur);
     }
 
-    /**
-     * Stel de helderheid in van de NeoPixels.
-     * @param helderheid De helderheid (0-255), eg: 40
-     */
-    //% blockId=robot_helderheid
-    //% block="zet helderheid %helderheid"
-    //% helderheid.min=0 helderheid.max=255
-    //% weight=80
-    export function helderheid(helderheid: number): void {
-        initGezicht();
-        gezicht.setBrightness(helderheid);
-        gezicht.show();
+    function kleurWenkbrauwen(kleur: number): void {
+        gezicht.setPixelColor(8, kleur);
+        gezicht.setPixelColor(9, kleur);
+        gezicht.setPixelColor(14, kleur);
+        gezicht.setPixelColor(15, kleur);
     }
+
+    function kleurGezicht(kleur: number): void {
+        for (let i = 0; i < LED_COUNT; i++) {
+            gezicht.setPixelColor(i, kleur);
+        }
+    }
+}
+
+enum RobotOnderdeel {
+    //% block="ogen"
+    Ogen,
+    //% block="mond"
+    Mond,
+    //% block="wenkbrauwen"
+    Wenkbrauwen,
+    //% block="gezicht"
+    Gezicht
 }
