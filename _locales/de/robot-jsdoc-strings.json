@@ -3,6 +3,7 @@
     "robot.initialize": "Initialisiere das Robotergesicht am angegebenen Datenpin.",
     "robot.mirrorToScreen": "Zeige den Ausdruck auch auf dem 5x5 LED-Bildschirm des micro:bit.",
     "robot.setArm": "Bewege den Roboterarm in eine Position, indem Servo 2 angesteuert wird.",
+    "robot.setArmFromAnalog": "Setze den Armwinkel (0-180) anhand des Analogeingangs an Pin P2 und steuere Servo 2 an.",
     "robot.setBrightness": "Stelle die Gesamthelligkeit des Robotergesichts ein (0-255).",
     "robot.setColor": "Färbe einen Teil des Gesichts.",
     "robot.showExpression": "Zeige einen Ausdruck auf dem Robotergesicht."

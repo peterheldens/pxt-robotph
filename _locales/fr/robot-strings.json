@@ -19,6 +19,7 @@
     "robot.initialize|block": "initialiser le robot sur la broche %pin avec %count LEDs en %mode",
     "robot.mirrorToScreen|block": "afficher aussi le visage sur l'écran micro:bit %on",
     "robot.setArm|block": "mettre le bras %position",
+    "robot.setArmFromAnalog|block": "mettre le bras selon l'entrée analogique P2",
     "robot.setBrightness|block": "régler la luminosité à %brightness",
     "robot.setColor|block": "mettre %part à la couleur %color",
     "robot.showExpression|block": "montrer l'expression %expression avec la couleur %color",

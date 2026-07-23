@@ -3,6 +3,7 @@
     "robot.initialize": "Initialiseer het robotgezicht op de opgegeven datapin.",
     "robot.mirrorToScreen": "Toon de expressie ook op het 5x5 LED-scherm van de micro:bit.",
     "robot.setArm": "Beweeg de robotarm naar een positie door servo 2 aan te sturen.",
+    "robot.setArmFromAnalog": "Zet de armhoek (0-180) op basis van de analoge invoer op pin P2 en stuur servo 2 aan.",
     "robot.setBrightness": "Stel de algehele helderheid van het robotgezicht in (0-255).",
     "robot.setColor": "Geef een onderdeel van het gezicht een kleur.",
     "robot.showExpression": "Toon een expressie op het robotgezicht."

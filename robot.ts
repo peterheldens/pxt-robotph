@@ -213,6 +213,20 @@ namespace robot {
         kitronik_simple_servo.setServoAngle(kitronik_simple_servo.ServoChoice.servo2, degrees);
     }
 
+    /**
+     * Set the arm angle (0-180) from the analog input on pin P2, driving servo 2.
+     */
+    //% blockId="robot_set_arm_analog"
+    //% block="set arm from analog P2"
+    //% weight=55
+    //% group="Arms"
+    export function setArmFromAnalog(): void {
+        let value = pins.analogReadPin(AnalogPin.P2);
+        let degrees = Math.map(value, 0, 1023, 0, 180);
+        degrees = Math.round(Math.clamp(0, 180, degrees));
+        kitronik_simple_servo.setServoAngle(kitronik_simple_servo.ServoChoice.servo2, degrees);
+    }
+
     function tekenOpScherm(expression: RobotExpression): void {
         if (!spiegelNaarScherm) return;
         switch (expression) {

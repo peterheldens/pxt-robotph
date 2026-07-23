@@ -19,6 +19,7 @@
     "robot.initialize|block": "initialize robot on pin %pin with %count LEDs as %mode",
     "robot.mirrorToScreen|block": "also show face on micro:bit screen %on",
     "robot.setArm|block": "set arm %position",
+    "robot.setArmFromAnalog|block": "set arm from analog P2",
     "robot.setBrightness|block": "set brightness to %brightness",
     "robot.setColor|block": "set %part to color %color",
     "robot.showExpression|block": "show expression %expression with color %color",

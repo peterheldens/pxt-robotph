@@ -3,6 +3,7 @@
     "robot.initialize": "Initialize the robot face on the given data pin.",
     "robot.mirrorToScreen": "Also mirror the expression on the micro:bit's 5x5 LED screen.",
     "robot.setArm": "Move the robot arm to a position by driving servo 2.",
+    "robot.setArmFromAnalog": "Set the arm angle (0-180) from the analog input on pin P2, driving servo 2.",
     "robot.setBrightness": "Set the overall brightness of the robot face (0-255).",
     "robot.setColor": "Set the color of a part of the face.",
     "robot.showExpression": "Show an expression on the robot face."
