@@ -30,6 +30,7 @@ namespace robot {
     let LED_PIN: DigitalPin = DigitalPin.P16;
     let LED_COUNT: number = 16;
     let gezicht: neopixel.Strip;
+    let spiegelNaarScherm: boolean = true;
 
     //% blockId="robot_init"
     //% block="initialiseer robot op pin %pin met %aantal LEDs"
@@ -132,6 +133,59 @@ namespace robot {
                 break;
         }
         gezicht.show();
+        tekenOpScherm(expressie);
+    }
+
+    //% blockId="robot_scherm_spiegel"
+    //% block="toon gezicht ook op micro:bit-scherm %aan"
+    //% aan.shadow="toggleOnOff" aan.defl=true
+    //% weight=65
+    //% group="Expressies"
+    export function schermSpiegeling(aan: boolean): void {
+        spiegelNaarScherm = aan;
+        if (!aan) basic.clearScreen();
+    }
+
+    function tekenOpScherm(expressie: RobotExpressie): void {
+        if (!spiegelNaarScherm) return;
+        switch (expressie) {
+            case RobotExpressie.Blij:
+                basic.showLeds(`
+                    . # . # .
+                    . # . # .
+                    . . . . .
+                    # . . . #
+                    . # # # .
+                `);
+                break;
+            case RobotExpressie.Boos:
+                basic.showLeds(`
+                    # . . . #
+                    . # . # .
+                    . . . . .
+                    . # # # .
+                    # . . . #
+                `);
+                break;
+            case RobotExpressie.Verdrietig:
+                basic.showLeds(`
+                    . # . # .
+                    . # . # .
+                    . . . . .
+                    . # # # .
+                    # . . . #
+                `);
+                break;
+            case RobotExpressie.Verrast:
+                basic.showLeds(`
+                    . # . # .
+                    . . . . .
+                    . # # # .
+                    . # . # .
+                    . # # # .
+                `);
+                break;
+        }
     }
 
     function initGezicht(): void {

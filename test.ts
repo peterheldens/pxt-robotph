@@ -1,6 +1,7 @@
 // Testbestand voor de robot-extensie
 robot.initialiseer(DigitalPin.P16, 16)
 robot.helderheid(60)
+robot.schermSpiegeling(true)
 
 basic.forever(function () {
     robot.setKleur(robot.RobotOnderdeel.Ogen, NeoPixelColors.Red)
