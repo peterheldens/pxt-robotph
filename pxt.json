@@ -1,7 +1,7 @@
    {
        "name": "robot",
        "description": "Een extensie om een robotgezicht te besturen met NeoPixels.",
-       "version": "1.0.4",
+       "version": "1.0.5",
        "license": "MIT",
        "dependencies": {
            "core": "*",
@@ -10,7 +10,8 @@
        "files": [
            "robot.ts",
            "README.md",
-           "icon.png"
+           "icon.png",
+           "pxtparts.json"
        ],
        "testFiles": [
            "test.ts"
