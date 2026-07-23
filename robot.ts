@@ -37,6 +37,7 @@ namespace robotph {
     //% aantal.defl=16 aantal.min=1 aantal.max=64
     //% weight=100
     //% group="Instellen"
+    //% parts="neopixel" trackArgs=0
     export function initialiseer(pin: DigitalPin, aantal: number): void {
         LED_PIN = pin;
         LED_COUNT = Math.max(1, aantal);
@@ -49,6 +50,7 @@ namespace robotph {
     //% helderheid.min=0 helderheid.max=255 helderheid.defl=40
     //% weight=95
     //% group="Instellen"
+    //% parts="neopixel"
     export function helderheid(helderheid: number): void {
         initGezicht();
         gezicht.setBrightness(Math.clamp(0, 255, helderheid));
@@ -60,6 +62,7 @@ namespace robotph {
     //% kleur.shadow="colorNumberPicker"
     //% weight=90
     //% group="Kleuren"
+    //% parts="neopixel"
     export function setKleur(onderdeel: RobotOnderdeel, kleur: number): void {
         initGezicht();
         switch (onderdeel) {
@@ -83,6 +86,7 @@ namespace robotph {
     //% block="wis %onderdeel"
     //% weight=80
     //% group="Kleuren"
+    //% parts="neopixel"
     export function wis(onderdeel: RobotOnderdeel): void {
         initGezicht();
         switch (onderdeel) {
@@ -107,6 +111,7 @@ namespace robotph {
     //% kleur.shadow="colorNumberPicker"
     //% weight=70
     //% group="Expressies"
+    //% parts="neopixel"
     export function toonExpressie(expressie: RobotExpressie, kleur: number): void {
         initGezicht();
         gezicht.clear();
