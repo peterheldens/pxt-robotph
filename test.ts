@@ -1,31 +1,30 @@
-// Testbestand voor de robot-extensie
-robot.initialiseer(DigitalPin.P8, 16, NeoPixelMode.RGB)
-robot.helderheid(60)
-robot.schermSpiegeling(true)
+// Test file for the robot extension
+robot.initialize(DigitalPin.P8, 16, NeoPixelMode.RGB)
+robot.setBrightness(60)
+robot.mirrorToScreen(true)
 
 basic.forever(function () {
-    robot.setKleur(robot.RobotOnderdeel.Ogen, NeoPixelColors.Red)
+    robot.setColor(RobotPart.Eyes, NeoPixelColors.Red)
     basic.pause(500)
-    robot.wis(robot.RobotOnderdeel.Ogen)
+    robot.clear(RobotPart.Eyes)
 
-    robot.setKleur(robot.RobotOnderdeel.Lippen, NeoPixelColors.Green)
+    robot.setColor(RobotPart.Lips, NeoPixelColors.Green)
     basic.pause(500)
-    robot.wis(robot.RobotOnderdeel.Lippen)
+    robot.clear(RobotPart.Lips)
 
-    robot.setKleur(robot.RobotOnderdeel.Neus, NeoPixelColors.Blue)
+    robot.setColor(RobotPart.Nose, NeoPixelColors.Blue)
     basic.pause(500)
-    robot.wis(robot.RobotOnderdeel.Neus)
+    robot.clear(RobotPart.Nose)
 
-    robot.setKleur(robot.RobotOnderdeel.Tinkywinki, NeoPixelColors.Purple)
+    robot.setColor(RobotPart.Tinkywinki, NeoPixelColors.Purple)
     basic.pause(500)
-    robot.wis(robot.RobotOnderdeel.Tinkywinki)
+    robot.clear(RobotPart.Tinkywinki)
 
-    robot.toonExpressie(robot.RobotExpressie.Blij, NeoPixelColors.Yellow)
-    basic.pause(500)
-
-    robot.toonExpressie(robot.RobotExpressie.Boos, NeoPixelColors.Red)
+    robot.showExpression(RobotExpression.Happy, NeoPixelColors.Yellow)
     basic.pause(500)
 
-    robot.wis(robot.RobotOnderdeel.Gezicht)
+    robot.showExpression(RobotExpression.Angry, NeoPixelColors.Red)
+    basic.pause(500)
+
+    robot.clear(RobotPart.Face)
 })
-

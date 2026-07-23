@@ -32,7 +32,7 @@
         ],
         "instantiation": {
             "kind": "function",
-            "fullyQualifiedName": "robot.initialiseer",
+            "fullyQualifiedName": "robot.initialize",
             "argumentRoles": [
                 { "pinInstantiationIdx": 0, "partParameter": "pin" },
                 { "partParameter": "mode" }

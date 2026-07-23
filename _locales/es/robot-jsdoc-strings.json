@@ -1,0 +1,8 @@
+{
+    "robot.clear": "Apaga una parte de la cara.",
+    "robot.initialize": "Inicializa la cara del robot en el pin de datos indicado.",
+    "robot.mirrorToScreen": "Muestra también la expresión en la pantalla LED 5x5 del micro:bit.",
+    "robot.setBrightness": "Ajusta el brillo general de la cara del robot (0-255).",
+    "robot.setColor": "Colorea una parte de la cara.",
+    "robot.showExpression": "Muestra una expresión en la cara del robot."
+}

@@ -1,0 +1,8 @@
+{
+    "robot.clear": "Zet een onderdeel van het gezicht uit.",
+    "robot.initialize": "Initialiseer het robotgezicht op de opgegeven datapin.",
+    "robot.mirrorToScreen": "Toon de expressie ook op het 5x5 LED-scherm van de micro:bit.",
+    "robot.setBrightness": "Stel de algehele helderheid van het robotgezicht in (0-255).",
+    "robot.setColor": "Geef een onderdeel van het gezicht een kleur.",
+    "robot.showExpression": "Toon een expressie op het robotgezicht."
+}
