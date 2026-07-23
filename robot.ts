@@ -143,6 +143,7 @@ namespace robot {
             case RobotExpression.Happy:
                 // Smile: only the lower lip curves up.
                 vul(lip_onder, color);
+                kitronik_simple_servo.setServoAngle(kitronik_simple_servo.ServoChoice.servo2, 180);
                 break;
             case RobotExpression.Angry:
                 // Pressed lips with a wrinkled nose.
@@ -153,6 +154,7 @@ namespace robot {
             case RobotExpression.Sad:
                 // Frown: only the upper lip.
                 vul(lip_boven, color);
+                kitronik_simple_servo.setServoAngle(kitronik_simple_servo.ServoChoice.servo2, 20);
                 break;
             case RobotExpression.Surprised:
                 // Open mouth with a lit-up tinkywinki.
