@@ -1,5 +1,5 @@
 // Testbestand voor de robot-extensie
-robot.initialiseer(DigitalPin.P16, 16, NeoPixelMode.RGB)
+robot.initialiseer(DigitalPin.P8, 16, NeoPixelMode.RGB)
 robot.helderheid(60)
 robot.schermSpiegeling(true)
 

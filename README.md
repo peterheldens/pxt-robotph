@@ -13,7 +13,11 @@ NeoPixel-ring (standaard 16 LEDs).
 ## Hardware
 
 * micro:bit
-* NeoPixel-ring met 16 LEDs, datapin standaard op **P16**
+* NeoPixel-ring met 16 LEDs, datapin standaard op **P8**
+
+> **Let op (simulator):** door een bug in de micro:bit-simulator worden NeoPixels
+> op dubbele-cijfer-pinnen (P10–P16) niet correct getoond. Gebruik een pin P0–P9
+> (zoals P8) als je de strip in de simulator wilt zien. Op echte hardware werkt elke pin.
 
 De LED-indeling van het gezicht (index in de ring):
 
@@ -34,7 +38,7 @@ De LED-indeling van het gezicht (index in de ring):
 ## Voorbeeld
 
 ```typescript
-robot.initialiseer(DigitalPin.P16, 16)
+robot.initialiseer(DigitalPin.P8, 16)
 robot.helderheid(60)
 robot.toonExpressie(robot.RobotExpressie.Blij, NeoPixelColors.Yellow)
 ```

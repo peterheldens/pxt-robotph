@@ -27,7 +27,7 @@ namespace robot {
         Verrast
     }
 
-    let LED_PIN: DigitalPin = DigitalPin.P16;
+    let LED_PIN: DigitalPin = DigitalPin.P8;
     let LED_COUNT: number = 16;
     let LED_MODE: NeoPixelMode = NeoPixelMode.RGB;
     let gezicht: neopixel.Strip;
@@ -35,7 +35,7 @@ namespace robot {
 
     //% blockId="robot_init"
     //% block="initialiseer robot op pin %pin met %aantal LEDs als %mode"
-    //% pin.defl=DigitalPin.P16
+    //% pin.defl=DigitalPin.P8
     //% aantal.defl=16 aantal.min=1 aantal.max=64
     //% mode.defl=NeoPixelMode.RGB
     //% weight=100
