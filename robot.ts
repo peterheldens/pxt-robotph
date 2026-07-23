@@ -165,7 +165,6 @@ namespace robot {
     //% blockId="robot_expression"
     //% block="show expression %expression with color %color"
     //% color.shadow="colorNumberPicker"
-    //% parts="microservo"
     //% weight=70
     //% group="Expressions"
     //% parts="robotface"
