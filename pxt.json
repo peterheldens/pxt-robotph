@@ -1,11 +1,12 @@
    {
        "name": "robot",
        "description": "An extension to control a robot face made of NeoPixels.",
-       "version": "1.0.15",
+       "version": "1.0.16",
        "license": "MIT",
        "dependencies": {
            "core": "*",
-           "neopixel": "github:microsoft/pxt-neopixel"
+           "neopixel": "github:microsoft/pxt-neopixel",
+           "pxt-kitronik-simple-servo": "github:KitronikLtd/pxt-kitronik-simple-servo"
        },
        "files": [
            "robot.ts",
