@@ -207,14 +207,15 @@ namespace robot {
     }
 
     /**
-     * Move the robot arm to a position by driving servo 2.
-     * @param position the arm position: high, middle or low
+     * Turn a servo to a position (high, middle or low).
+     * @param servo the servo to drive: servo2 or servo3
+     * @param position the position: high, middle or low
      */
-    //% blockId="robot_set_arm"
-    //% block="move arm %position"
+    //% blockId="robot_turn_servo_position"
+    //% block="turn %servo to position %position"
     //% weight=60
     //% group="Arms"
-    export function setArm(position: ArmPosition): void {
+    export function turnServoToPosition(servo: RobotServo, position: ArmPosition): void {
         let degrees = 90;
         switch (position) {
             case ArmPosition.High:
@@ -227,7 +228,10 @@ namespace robot {
                 degrees = 0;
                 break;
         }
-        kitronik_simple_servo.setServoAngle(kitronik_simple_servo.ServoChoice.servo2, degrees);
+        let servoChoice = servo == RobotServo.Servo3
+            ? kitronik_simple_servo.ServoChoice.servo3
+            : kitronik_simple_servo.ServoChoice.servo2;
+        kitronik_simple_servo.setServoAngle(servoChoice, degrees);
     }
 
     /**

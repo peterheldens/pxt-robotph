@@ -75,7 +75,7 @@ The LED layout of the face (index in the ring):
 * ``||robot.clear||`` - turn a part off.
 * ``||robot.showExpression||`` - show an expression (happy, angry, sad, surprised).
 * ``||robot.mirrorToScreen||`` - also mirror the expression on the 5x5 LED screen.
-* ``||robot.setArm||`` - move the arm high, middle or low (servo2).
+* ``||robot.turnServoToPosition||`` - turn servo2 or servo3 to a position (high, middle or low).
 * ``||robot.turnServoWithKnob||`` - turn servo2 or servo3 with a knob (potentiometer) connected to analog pin P0, P1 or P2.
 
 ## Supported targets

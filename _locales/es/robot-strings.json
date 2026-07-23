@@ -18,7 +18,7 @@
     "robot.clear|block": "borrar %part",
     "robot.initialize|block": "inicializar robot en el pin %pin con %count LEDs como %mode",
     "robot.mirrorToScreen|block": "mostrar también la cara en la pantalla micro:bit %on",
-    "robot.setArm|block": "mover brazo %position",
+    "robot.turnServoToPosition|block": "girar %servo a la posición %position",
     "robot.turnServoWithKnob|block": "girar %servo con potenciómetro conectado a %knob",
     "robot.setBrightness|block": "ajustar brillo a %brightness",
     "robot.setColor|block": "poner %part en color %color",
