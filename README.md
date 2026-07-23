@@ -1,51 +1,56 @@
 # pxt-robotph
 
-Een MakeCode-extensie voor de micro:bit om een robotgezicht te besturen met een
-NeoPixel-ring (standaard 16 LEDs).
+A MakeCode extension for the micro:bit to control a robot face made of a
+NeoPixel ring (16 LEDs by default).
 
-## Toevoegen in MakeCode
+## Add in MakeCode
 
 1. Open [makecode.microbit.org](https://makecode.microbit.org).
-2. Klik op het tandwiel -> **Extensions**.
-3. Plak de URL van deze repository en zoek.
-4. Klik op de `Robot`-tegel om de blokken toe te voegen.
+2. Click the gear icon -> **Extensions**.
+3. Paste the URL of this repository and search.
+4. Click the `Robot` tile to add the blocks.
 
 ## Hardware
 
 * micro:bit
-* NeoPixel-ring met 16 LEDs, datapin standaard op **P8**
+* NeoPixel ring with 16 LEDs, data pin defaults to **P8**
 
-> **Let op (simulator):** door een bug in de micro:bit-simulator worden NeoPixels
-> op dubbele-cijfer-pinnen (P10–P16) niet correct getoond. Gebruik een pin P0–P9
-> (zoals P8) als je de strip in de simulator wilt zien. Op echte hardware werkt elke pin.
+> **Note (simulator):** due to a bug in the micro:bit simulator, NeoPixels on
+> double-digit pins (P10–P16) are not shown correctly. Use a pin P0–P9 (such as
+> P8) if you want to see the strip in the simulator. On real hardware any pin works.
 
-De LED-indeling van het gezicht (index in de ring):
+The LED layout of the face (index in the ring):
 
-| Onderdeel   | LED-indexen   |
+| Part        | LED indexes   |
 |-------------|---------------|
 | tinkywinki  | 0             |
-| ogen        | 1, 2          |
-| oog_links   | 1             |
-| oog_rechts  | 2             |
-| neus        | 3             |
-| lippen      | 4 t/m 15      |
-| lip_boven   | 4 t/m 9       |
-| lip_onder   | 10 t/m 15     |
+| eyes        | 1, 2          |
+| left eye    | 1             |
+| right eye   | 2             |
+| nose        | 3             |
+| lips        | 4 .. 15       |
+| upper lip   | 4 .. 9        |
+| lower lip   | 10 .. 15      |
 
-## Blokken
+## Blocks
 
-* **initialiseer robot op pin ... met ... LEDs** - stel de datapin en het aantal LEDs in.
-* **zet helderheid op ...** - helderheid van 0 tot 255.
-* **zet ... op kleur ...** - kleur een onderdeel (ogen, linkeroog, rechteroog, neus, lippen, bovenlip, onderlip, tinkywinki of het hele gezicht).
-* **wis ...** - zet een onderdeel uit.
-* **toon expressie ... met kleur ...** - toon een expressie (blij, boos, verdrietig, verrast).
+* **initialize robot on pin ... with ... LEDs** - set the data pin and number of LEDs.
+* **set brightness to ...** - brightness from 0 to 255.
+* **set ... to color ...** - color a part (eyes, left eye, right eye, nose, lips, upper lip, lower lip, tinkywinki or the whole face).
+* **clear ...** - turn a part off.
+* **show expression ... with color ...** - show an expression (happy, angry, sad, surprised).
 
-## Voorbeeld
+## Languages
+
+The blocks are localized and follow the editor language. Translations are provided
+for English, Dutch, German, French and Spanish.
+
+## Example
 
 ```typescript
-robot.initialiseer(DigitalPin.P8, 16)
-robot.helderheid(60)
-robot.toonExpressie(robot.RobotExpressie.Blij, NeoPixelColors.Yellow)
+robot.initialize(DigitalPin.P8, 16)
+robot.setBrightness(60)
+robot.showExpression(RobotExpression.Happy, NeoPixelColors.Yellow)
 ```
 
 ## Supported targets
