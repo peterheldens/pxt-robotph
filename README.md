@@ -43,6 +43,16 @@ want to see the strip in the simulator. On real hardware any pin works.
 
 * micro:bit
 * NeoPixel ring with 16 LEDs, data pin defaults to **P8**
+* Kitronik servo board with three servo outputs
+
+## ~ hint
+
+**Wiring:** the extension uses the servo board.
+* Connect the **NeoPixel** face to **Servo1** on the servo board, because Servo1 is wired to pin **P8** (the default data pin).
+* The **arm** is driven by **Servo2** (pin P15).
+* The analog input for ``||robot.setArmFromAnalog||`` is read from pin **P2**.
+
+## ~
 
 The LED layout of the face (index in the ring):
 
@@ -65,6 +75,8 @@ The LED layout of the face (index in the ring):
 * ``||robot.clear||`` - turn a part off.
 * ``||robot.showExpression||`` - show an expression (happy, angry, sad, surprised).
 * ``||robot.mirrorToScreen||`` - also mirror the expression on the 5x5 LED screen.
+* ``||robot.setArm||`` - move the arm high, middle or low (servo2).
+* ``||robot.setArmFromAnalog||`` - set the arm angle (0-180) from the analog input on pin P2 (servo2).
 
 ## Supported targets
 

@@ -1,6 +1,6 @@
 {
     "robot.clear": "Schalte einen Teil des Gesichts aus.",
-    "robot.initialize": "Initialisiere das Robotergesicht am angegebenen Datenpin.",
+    "robot.initialize": "Initialisiere das Robotergesicht am angegebenen Datenpin. Schließe den NeoPixel an Servo1 der Servoplatine an: Servo1 liegt nämlich an Pin P8.",
     "robot.mirrorToScreen": "Zeige den Ausdruck auch auf dem 5x5 LED-Bildschirm des micro:bit.",
     "robot.setArm": "Bewege den Roboterarm in eine Position, indem Servo 2 angesteuert wird.",
     "robot.setArmFromAnalog": "Setze den Armwinkel (0-180) anhand des Analogeingangs an Pin P2 und steuere Servo 2 an.",

@@ -1,6 +1,6 @@
 {
     "robot.clear": "Zet een onderdeel van het gezicht uit.",
-    "robot.initialize": "Initialiseer het robotgezicht op de opgegeven datapin.",
+    "robot.initialize": "Initialiseer het robotgezicht op de opgegeven datapin. Sluit de NeoPixel aan op Servo1 van het servobord: Servo1 zit namelijk op pin P8.",
     "robot.mirrorToScreen": "Toon de expressie ook op het 5x5 LED-scherm van de micro:bit.",
     "robot.setArm": "Beweeg de robotarm naar een positie door servo 2 aan te sturen.",
     "robot.setArmFromAnalog": "Zet de armhoek (0-180) op basis van de analoge invoer op pin P2 en stuur servo 2 aan.",

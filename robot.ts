@@ -65,6 +65,7 @@ namespace robot {
 
     /**
      * Initialize the robot face on the given data pin.
+     * Connect the NeoPixel to Servo1 on the servo board: Servo1 is wired to pin P8.
      * @param pin the pin the NeoPixel strip is connected to
      * @param count the number of LEDs in the strip
      * @param mode the color format of the NeoPixels
