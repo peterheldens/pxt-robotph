@@ -34,8 +34,17 @@ enum RobotExpression {
     Surprised
 }
 
+enum ArmPosition {
+    //% block="high"
+    High,
+    //% block="middle"
+    Middle,
+    //% block="low"
+    Low
+}
+
 //% color=#2699BF icon="\uf110" block="Robot"
-//% groups='["Setup", "Colors", "Expressions"]'
+//% groups='["Setup", "Colors", "Expressions", "Arms"]'
 namespace robot {
 
     let LED_PIN: DigitalPin = DigitalPin.P8;
@@ -178,6 +187,30 @@ namespace robot {
     export function mirrorToScreen(on: boolean): void {
         spiegelNaarScherm = on;
         if (!on) basic.clearScreen();
+    }
+
+    /**
+     * Move the robot arm to a position by driving servo 2.
+     * @param position the arm position: high, middle or low
+     */
+    //% blockId="robot_set_arm"
+    //% block="set arm %position"
+    //% weight=60
+    //% group="Arms"
+    export function setArm(position: ArmPosition): void {
+        let degrees = 90;
+        switch (position) {
+            case ArmPosition.High:
+                degrees = 180;
+                break;
+            case ArmPosition.Middle:
+                degrees = 90;
+                break;
+            case ArmPosition.Low:
+                degrees = 0;
+                break;
+        }
+        kitronik_simple_servo.setServoAngle(kitronik_simple_servo.ServoChoice.servo2, degrees);
     }
 
     function tekenOpScherm(expression: RobotExpression): void {

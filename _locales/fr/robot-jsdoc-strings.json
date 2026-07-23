@@ -2,6 +2,7 @@
     "robot.clear": "Éteindre une partie du visage.",
     "robot.initialize": "Initialiser le visage du robot sur la broche de données indiquée.",
     "robot.mirrorToScreen": "Afficher aussi l'expression sur l'écran LED 5x5 du micro:bit.",
+    "robot.setArm": "Déplacer le bras du robot vers une position en pilotant le servo 2.",
     "robot.setBrightness": "Régler la luminosité générale du visage du robot (0-255).",
     "robot.setColor": "Colorer une partie du visage.",
     "robot.showExpression": "Montrer une expression sur le visage du robot."

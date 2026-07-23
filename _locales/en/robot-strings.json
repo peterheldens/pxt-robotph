@@ -1,4 +1,7 @@
 {
+    "ArmPosition.High|block": "high",
+    "ArmPosition.Low|block": "low",
+    "ArmPosition.Middle|block": "middle",
     "RobotExpression.Angry|block": "angry",
     "RobotExpression.Happy|block": "happy",
     "RobotExpression.Sad|block": "sad",
@@ -15,10 +18,12 @@
     "robot.clear|block": "clear %part",
     "robot.initialize|block": "initialize robot on pin %pin with %count LEDs as %mode",
     "robot.mirrorToScreen|block": "also show face on micro:bit screen %on",
+    "robot.setArm|block": "set arm %position",
     "robot.setBrightness|block": "set brightness to %brightness",
     "robot.setColor|block": "set %part to color %color",
     "robot.showExpression|block": "show expression %expression with color %color",
     "{id:category}Robot": "Robot",
+    "{id:group}Arms": "Arms",
     "{id:group}Colors": "Colors",
     "{id:group}Expressions": "Expressions",
     "{id:group}Setup": "Setup"
