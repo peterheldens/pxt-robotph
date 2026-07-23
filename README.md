@@ -4,6 +4,25 @@ A MakeCode extension for the micro:bit to control a robot face made of a
 NeoPixel ring (16 LEDs by default). The blocks are localized and follow the
 editor language (English, Dutch, German, French and Spanish).
 
+## About microbitrobot
+
+This is the extension for **microbitrobot**: a combination of a **robot** and a
+**blackboard**, designed for use in classrooms. The robot is a self-build kit
+made of wood.
+
+Hardware overview:
+
+* A **servo motor** to move the **arms**.
+* A **servo motor** to drive the **dashboard**.
+* An **analog servo gauge** (meter).
+* **NeoPixels** for the **antenna**, **eyes**, **nose**, **mouth** and **lips**.
+* A **push button** and a **vibrating spiral**.
+* Everything is wired through the **Kitronik servo board**.
+
+The robot also has a **remote controller**. Children in the classroom can plug
+their own project, running on their own micro:bit, into the robot blackboard and
+control it directly with their own controller.
+
 ## ~ hint
 
 Add this extension in MakeCode via the gear icon -> **Extensions**, then paste
