@@ -1,25 +1,26 @@
-// Testbestand voor de robotph-extensie
-robotph.initialiseer(DigitalPin.P16, 16)
-robotph.helderheid(60)
+// Testbestand voor de robot-extensie
+robot.initialiseer(DigitalPin.P16, 16)
+robot.helderheid(60)
 
 basic.forever(function () {
-    robotph.setKleur(robotph.RobotOnderdeel.Ogen, NeoPixelColors.Red)
+    robot.setKleur(robot.RobotOnderdeel.Ogen, NeoPixelColors.Red)
     basic.pause(500)
-    robotph.wis(robotph.RobotOnderdeel.Ogen)
+    robot.wis(robot.RobotOnderdeel.Ogen)
 
-    robotph.setKleur(robotph.RobotOnderdeel.Mond, NeoPixelColors.Green)
+    robot.setKleur(robot.RobotOnderdeel.Mond, NeoPixelColors.Green)
     basic.pause(500)
-    robotph.wis(robotph.RobotOnderdeel.Mond)
+    robot.wis(robot.RobotOnderdeel.Mond)
 
-    robotph.setKleur(robotph.RobotOnderdeel.Wenkbrauwen, NeoPixelColors.Blue)
+    robot.setKleur(robot.RobotOnderdeel.Wenkbrauwen, NeoPixelColors.Blue)
     basic.pause(500)
-    robotph.wis(robotph.RobotOnderdeel.Wenkbrauwen)
+    robot.wis(robot.RobotOnderdeel.Wenkbrauwen)
 
-    robotph.toonExpressie(robotph.RobotExpressie.Blij, NeoPixelColors.Yellow)
-    basic.pause(500)
-
-    robotph.toonExpressie(robotph.RobotExpressie.Boos, NeoPixelColors.Red)
+    robot.toonExpressie(robot.RobotExpressie.Blij, NeoPixelColors.Yellow)
     basic.pause(500)
 
-    robotph.wis(robotph.RobotOnderdeel.Gezicht)
+    robot.toonExpressie(robot.RobotExpressie.Boos, NeoPixelColors.Red)
+    basic.pause(500)
+
+    robot.wis(robot.RobotOnderdeel.Gezicht)
 })
+

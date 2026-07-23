@@ -1,9 +1,9 @@
 /**
  * Bestuur een robotgezicht met een NeoPixel-ring (standaard 16 LEDs).
  */
-//% color=#2699BF icon="\uf110" block="robotph"
+//% color=#2699BF icon="\uf544" block="Robot"
 //% groups='["Instellen", "Kleuren", "Expressies"]'
-namespace robotph {
+namespace robot {
 
     export enum RobotOnderdeel {
         //% block="ogen"
@@ -31,7 +31,7 @@ namespace robotph {
     let LED_COUNT: number = 16;
     let gezicht: neopixel.Strip;
 
-    //% blockId="robotph_init"
+    //% blockId="robot_init"
     //% block="initialiseer robot op pin %pin met %aantal LEDs"
     //% pin.defl=DigitalPin.P16
     //% aantal.defl=16 aantal.min=1 aantal.max=64
@@ -45,7 +45,7 @@ namespace robotph {
         initGezicht();
     }
 
-    //% blockId="robotph_helderheid"
+    //% blockId="robot_helderheid"
     //% block="zet helderheid op %helderheid"
     //% helderheid.min=0 helderheid.max=255 helderheid.defl=40
     //% weight=95
@@ -57,7 +57,7 @@ namespace robotph {
         gezicht.show();
     }
 
-    //% blockId="robotph_set_kleur"
+    //% blockId="robot_set_kleur"
     //% block="zet %onderdeel op kleur %kleur"
     //% kleur.shadow="colorNumberPicker"
     //% weight=90
@@ -82,7 +82,7 @@ namespace robotph {
         gezicht.show();
     }
 
-    //% blockId="robotph_wis"
+    //% blockId="robot_wis"
     //% block="wis %onderdeel"
     //% weight=80
     //% group="Kleuren"
@@ -106,7 +106,7 @@ namespace robotph {
         gezicht.show();
     }
 
-    //% blockId="robotph_expressie"
+    //% blockId="robot_expressie"
     //% block="toon expressie %expressie met kleur %kleur"
     //% kleur.shadow="colorNumberPicker"
     //% weight=70

@@ -8,7 +8,7 @@ NeoPixel-ring (standaard 16 LEDs).
 1. Open [makecode.microbit.org](https://makecode.microbit.org).
 2. Klik op het tandwiel -> **Extensions**.
 3. Plak de URL van deze repository en zoek.
-4. Klik op de `robotph`-tegel om de blokken toe te voegen.
+4. Klik op de `Robot`-tegel om de blokken toe te voegen.
 
 ## Hardware
 
@@ -34,9 +34,9 @@ De LED-indeling van het gezicht (index in de ring):
 ## Voorbeeld
 
 ```typescript
-robotph.initialiseer(DigitalPin.P16, 16)
-robotph.helderheid(60)
-robotph.toonExpressie(robotph.RobotExpressie.Blij, NeoPixelColors.Yellow)
+robot.initialiseer(DigitalPin.P16, 16)
+robot.helderheid(60)
+robot.toonExpressie(robot.RobotExpressie.Blij, NeoPixelColors.Yellow)
 ```
 
 ## Supported targets
@@ -46,3 +46,4 @@ robotph.toonExpressie(robotph.RobotExpressie.Blij, NeoPixelColors.Yellow)
 ## License
 
 MIT
+
