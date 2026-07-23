@@ -21,6 +21,7 @@
     "robot.mirrorToArms|block": "bouger aussi les bras selon l'expression %on",
     "robot.turnServoToPosition|block": "tourner %servo vers la position %position",
     "robot.turnServoWithKnob|block": "tourner %servo avec le potentiomètre connecté à %knob",
+    "robot.reverseServo|block": "inverser le sens de %servo %on",
     "robot.setBrightness|block": "régler la luminosité à %brightness",
     "robot.setColor|block": "mettre %part à la couleur %color",
     "robot.showExpression|block": "montrer l'expression %expression avec la couleur %color",

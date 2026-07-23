@@ -21,6 +21,7 @@
     "robot.mirrorToArms|block": "beweeg armen ook met expressie %on",
     "robot.turnServoToPosition|block": "draai %servo naar positie %position",
     "robot.turnServoWithKnob|block": "draai %servo met draaiknop verbonden aan %knob",
+    "robot.reverseServo|block": "draai richting om van %servo %on",
     "robot.setBrightness|block": "zet helderheid op %brightness",
     "robot.setColor|block": "zet %part op kleur %color",
     "robot.showExpression|block": "toon expressie %expression met kleur %color",

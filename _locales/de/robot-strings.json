@@ -21,6 +21,7 @@
     "robot.mirrorToArms|block": "Arme auch mit dem Ausdruck bewegen %on",
     "robot.turnServoToPosition|block": "drehe %servo zu Position %position",
     "robot.turnServoWithKnob|block": "drehe %servo mit Drehknopf an %knob",
+    "robot.reverseServo|block": "Drehrichtung umkehren von %servo %on",
     "robot.setBrightness|block": "setze Helligkeit auf %brightness",
     "robot.setColor|block": "setze %part auf Farbe %color",
     "robot.showExpression|block": "zeige Ausdruck %expression mit Farbe %color",

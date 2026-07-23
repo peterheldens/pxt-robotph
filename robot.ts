@@ -69,6 +69,8 @@ namespace robot {
     let gezicht: neopixel.Strip;
     let spiegelNaarScherm: boolean = true;
     let spiegelNaarArmen: boolean = true;
+    let omkeerServo2: boolean = false;
+    let omkeerServo3: boolean = false;
 
     // Parts of the face, expressed as ranges on the LED strip.
     let tinkywinki: neopixel.Strip;
@@ -244,7 +246,7 @@ namespace robot {
         let servoChoice = servo == RobotServo.Servo3
             ? kitronik_simple_servo.ServoChoice.servo3
             : kitronik_simple_servo.ServoChoice.servo2;
-        kitronik_simple_servo.setServoAngle(servoChoice, degrees);
+        zetServo(servoChoice, degrees);
     }
 
     /**
@@ -274,6 +276,33 @@ namespace robot {
         let servoChoice = servo == RobotServo.Servo3
             ? kitronik_simple_servo.ServoChoice.servo3
             : kitronik_simple_servo.ServoChoice.servo2;
+        zetServo(servoChoice, degrees);
+    }
+
+    /**
+     * Reverse the turning direction of a servo. When on, an angle of 180
+     * becomes 0, 0 becomes 180, 30 becomes 150, and so on.
+     * @param servo the servo to reverse: servo2 or servo3
+     * @param on true to reverse the direction of the servo
+     */
+    //% blockId="robot_reverse_servo"
+    //% block="reverse direction of %servo %on"
+    //% on.shadow="toggleOnOff" on.defl=true
+    //% weight=50
+    //% group="Arms"
+    export function reverseServo(servo: RobotServo, on: boolean): void {
+        if (servo == RobotServo.Servo3) {
+            omkeerServo3 = on;
+        } else {
+            omkeerServo2 = on;
+        }
+    }
+
+    function zetServo(servoChoice: kitronik_simple_servo.ServoChoice, degrees: number): void {
+        let inverted = servoChoice == kitronik_simple_servo.ServoChoice.servo3
+            ? omkeerServo3
+            : omkeerServo2;
+        if (inverted) degrees = 180 - degrees;
         kitronik_simple_servo.setServoAngle(servoChoice, degrees);
     }
 
@@ -298,7 +327,7 @@ namespace robot {
                 degrees = 20;
                 break;
         }
-        kitronik_simple_servo.setServoAngle(kitronik_simple_servo.ServoChoice.servo2, degrees);
+        zetServo(kitronik_simple_servo.ServoChoice.servo2, degrees);
     }
 
     function tekenOpScherm(expression: RobotExpression): void {

@@ -97,6 +97,7 @@ The LED layout of the face (index in the ring):
 * ``||robot.mirrorToArms||`` - also move the arms (servo2) with the expression (on by default).
 * ``||robot.turnServoToPosition||`` - turn servo2 or servo3 to a position (high, middle or low).
 * ``||robot.turnServoWithKnob||`` - turn servo2 or servo3 with a knob (potentiometer) connected to analog pin P0, P1 or P2.
+* ``||robot.reverseServo||`` - reverse the turning direction of servo2 or servo3 (an angle of 180 becomes 0, 30 becomes 150, and so on).
 
 ## Other languages
 

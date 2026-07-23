@@ -5,6 +5,7 @@
     "robot.mirrorToArms": "Beweeg de armen (servo2) ook mee met de expressie.",
     "robot.turnServoToPosition": "Draai een servo naar een positie (hoog, midden of laag).",
     "robot.turnServoWithKnob": "Draai een servo naar een hoek (0-180) op basis van een draaiknop (potentiometer) verbonden aan een analoge pin.",
+    "robot.reverseServo": "Draai de draairichting van een servo om. Als dit aan staat, wordt een hoek van 180 nu 0, 0 wordt 180, 30 wordt 150, enzovoort.",
     "robot.setBrightness": "Stel de algehele helderheid van het robotgezicht in (0-255).",
     "robot.setColor": "Geef een onderdeel van het gezicht een kleur.",
     "robot.showExpression": "Toon een expressie op het robotgezicht."
