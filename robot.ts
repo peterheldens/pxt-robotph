@@ -34,9 +34,10 @@ namespace robot {
     let spiegelNaarScherm: boolean = true;
 
     //% blockId="robot_init"
-    //% block="initialiseer robot op pin %pin met %aantal LEDs"
+    //% block="initialiseer robot op pin %pin met %aantal LEDs als %mode"
     //% pin.defl=DigitalPin.P16
     //% aantal.defl=16 aantal.min=1 aantal.max=64
+    //% mode.defl=NeoPixelMode.RGB
     //% weight=100
     //% group="Instellen"
     //% parts="robotface" trackArgs=0,2
