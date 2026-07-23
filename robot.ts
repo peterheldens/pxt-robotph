@@ -1,21 +1,67 @@
+/**
+ * Bestuur een robotgezicht met een NeoPixel-ring (standaard 16 LEDs).
+ */
 //% color=#2699BF icon="\uf110" block="robotph"
+//% groups='["Instellen", "Kleuren", "Expressies"]'
 namespace robotph {
+
+    export enum RobotOnderdeel {
+        //% block="ogen"
+        Ogen,
+        //% block="mond"
+        Mond,
+        //% block="wenkbrauwen"
+        Wenkbrauwen,
+        //% block="gezicht"
+        Gezicht
+    }
+
+    export enum RobotExpressie {
+        //% block="blij"
+        Blij,
+        //% block="boos"
+        Boos,
+        //% block="verdrietig"
+        Verdrietig,
+        //% block="verrast"
+        Verrast
+    }
+
+    let LED_PIN: DigitalPin = DigitalPin.P16;
+    let LED_COUNT: number = 16;
+    let gezicht: neopixel.Strip;
+
     //% blockId="robotph_init"
     //% block="initialiseer robot op pin %pin met %aantal LEDs"
     //% pin.defl=DigitalPin.P16
-    //% aantal.defl=16
+    //% aantal.defl=16 aantal.min=1 aantal.max=64
     //% weight=100
+    //% group="Instellen"
     export function initialiseer(pin: DigitalPin, aantal: number): void {
         LED_PIN = pin;
-        LED_COUNT = aantal;
+        LED_COUNT = Math.max(1, aantal);
+        gezicht = null;
         initGezicht();
+    }
+
+    //% blockId="robotph_helderheid"
+    //% block="zet helderheid op %helderheid"
+    //% helderheid.min=0 helderheid.max=255 helderheid.defl=40
+    //% weight=95
+    //% group="Instellen"
+    export function helderheid(helderheid: number): void {
+        initGezicht();
+        gezicht.setBrightness(Math.clamp(0, 255, helderheid));
+        gezicht.show();
     }
 
     //% blockId="robotph_set_kleur"
     //% block="zet %onderdeel op kleur %kleur"
+    //% kleur.shadow="colorNumberPicker"
     //% weight=90
-    export function setKleur(onderdeel: RobotOnderdeel, kleur: NeoPixelColors): void {
-        if (!gezicht) initGezicht();
+    //% group="Kleuren"
+    export function setKleur(onderdeel: RobotOnderdeel, kleur: number): void {
+        initGezicht();
         switch (onderdeel) {
             case RobotOnderdeel.Ogen:
                 kleurOgen(kleur);
@@ -36,8 +82,9 @@ namespace robotph {
     //% blockId="robotph_wis"
     //% block="wis %onderdeel"
     //% weight=80
+    //% group="Kleuren"
     export function wis(onderdeel: RobotOnderdeel): void {
-        if (!gezicht) initGezicht();
+        initGezicht();
         switch (onderdeel) {
             case RobotOnderdeel.Ogen:
                 kleurOgen(NeoPixelColors.Black);
@@ -55,19 +102,32 @@ namespace robotph {
         gezicht.show();
     }
 
-    //% blockId="robotph_helderheid"
-    //% block="zet helderheid op %helderheid"
-    //% helderheid.min=0 helderheid.max=255
+    //% blockId="robotph_expressie"
+    //% block="toon expressie %expressie met kleur %kleur"
+    //% kleur.shadow="colorNumberPicker"
     //% weight=70
-    export function helderheid(helderheid: number): void {
-        if (!gezicht) initGezicht();
-        gezicht.setBrightness(helderheid);
+    //% group="Expressies"
+    export function toonExpressie(expressie: RobotExpressie, kleur: number): void {
+        initGezicht();
+        gezicht.clear();
+        kleurOgen(kleur);
+        switch (expressie) {
+            case RobotExpressie.Blij:
+                kleurMond(kleur);
+                break;
+            case RobotExpressie.Boos:
+                kleurWenkbrauwen(kleur);
+                kleurMond(kleur);
+                break;
+            case RobotExpressie.Verdrietig:
+                kleurWenkbrauwen(kleur);
+                break;
+            case RobotExpressie.Verrast:
+                kleurMond(kleur);
+                break;
+        }
         gezicht.show();
     }
-
-    let LED_PIN: DigitalPin = DigitalPin.P16;
-    let LED_COUNT: number = 16;
-    let gezicht: neopixel.Strip;
 
     function initGezicht(): void {
         if (gezicht) return;
@@ -103,15 +163,4 @@ namespace robotph {
             gezicht.setPixelColor(i, kleur);
         }
     }
-}
-
-enum RobotOnderdeel {
-    //% block="ogen"
-    Ogen,
-    //% block="mond"
-    Mond,
-    //% block="wenkbrauwen"
-    Wenkbrauwen,
-    //% block="gezicht"
-    Gezicht
 }

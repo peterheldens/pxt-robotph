@@ -5,9 +5,8 @@
        "license": "MIT",
        "dependencies": {
            "core": "*",
-           "neopixel": "*"
+           "neopixel": "github:microsoft/pxt-neopixel"
        },
-       "main": "robot.ts",
        "files": [
            "robot.ts",
            "README.md"
