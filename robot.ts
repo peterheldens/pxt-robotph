@@ -29,6 +29,7 @@ namespace robot {
 
     let LED_PIN: DigitalPin = DigitalPin.P16;
     let LED_COUNT: number = 16;
+    let LED_MODE: NeoPixelMode = NeoPixelMode.RGB;
     let gezicht: neopixel.Strip;
     let spiegelNaarScherm: boolean = true;
 
@@ -38,10 +39,11 @@ namespace robot {
     //% aantal.defl=16 aantal.min=1 aantal.max=64
     //% weight=100
     //% group="Instellen"
-    //% parts="robotface" trackArgs=0
-    export function initialiseer(pin: DigitalPin, aantal: number): void {
+    //% parts="robotface" trackArgs=0,2
+    export function initialiseer(pin: DigitalPin, aantal: number, mode: NeoPixelMode = NeoPixelMode.RGB): void {
         LED_PIN = pin;
         LED_COUNT = Math.max(1, aantal);
+        LED_MODE = mode;
         gezicht = null;
         initGezicht();
     }
@@ -190,7 +192,7 @@ namespace robot {
 
     function initGezicht(): void {
         if (gezicht) return;
-        gezicht = neopixel.create(LED_PIN, LED_COUNT, NeoPixelMode.RGB);
+        gezicht = neopixel.create(LED_PIN, LED_COUNT, LED_MODE);
         gezicht.setBrightness(40);
         gezicht.clear();
         gezicht.show();

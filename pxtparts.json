@@ -34,7 +34,8 @@
             "kind": "function",
             "fullyQualifiedName": "robot.initialiseer",
             "argumentRoles": [
-                { "pinInstantiationIdx": 0, "partParameter": "pin" }
+                { "pinInstantiationIdx": 0, "partParameter": "pin" },
+                { "partParameter": "mode" }
             ]
         },
         "assembly": [
