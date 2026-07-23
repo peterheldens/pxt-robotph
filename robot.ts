@@ -1,7 +1,7 @@
 /**
  * Bestuur een robotgezicht met een NeoPixel-ring (standaard 16 LEDs).
  */
-//% color=#2699BF icon="\uf544" block="Robot"
+//% color=#2699BF icon="\uf17b" block="Robot"
 //% groups='["Instellen", "Kleuren", "Expressies"]'
 namespace robot {
 

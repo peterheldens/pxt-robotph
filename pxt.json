@@ -1,7 +1,7 @@
    {
        "name": "robot",
        "description": "Een extensie om een robotgezicht te besturen met NeoPixels.",
-       "version": "1.0.3",
+       "version": "1.0.4",
        "license": "MIT",
        "dependencies": {
            "core": "*",
