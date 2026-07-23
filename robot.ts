@@ -195,7 +195,7 @@ namespace robot {
      * @param position the arm position: high, middle or low
      */
     //% blockId="robot_set_arm"
-    //% block="set arm %position"
+    //% block="move arm %position"
     //% weight=60
     //% group="Arms"
     export function setArm(position: ArmPosition): void {
@@ -218,7 +218,7 @@ namespace robot {
      * Set the arm angle (0-180) from the analog input on pin P2, driving servo 2.
      */
     //% blockId="robot_set_arm_analog"
-    //% block="set arm from analog P2"
+    //% block="move arm from analog P2"
     //% weight=55
     //% group="Arms"
     export function setArmFromAnalog(): void {
