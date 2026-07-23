@@ -97,6 +97,52 @@ The LED layout of the face (index in the ring):
 * ``||robot.turnServoToPosition||`` - turn servo2 or servo3 to a position (high, middle or low).
 * ``||robot.turnServoWithKnob||`` - turn servo2 or servo3 with a knob (potentiometer) connected to analog pin P0, P1 or P2.
 
+## Other languages
+
+### Nederlands
+
+Dit is de extensie voor **microbitrobot**: een combinatie van een **robot** en
+een **schoolbord**, gemaakt voor gebruik in de klas. De robot is een houten
+zelfbouwkit. Een servomotor beweegt de **armen**, een servomotor stuurt het
+**dashboard**, en er is een **analoge meter**. **NeoPixels** vormen de antenne,
+ogen, neus, mond en lippen. Er zijn een **drukknop** en een **bibberspiraal**,
+allemaal bedraad via het **Kitronik servo board**. Met de **afstandsbediening**
+pluggen kinderen hun eigen micro:bit-project op het robotbord en besturen ze het
+direct.
+
+### Deutsch
+
+Dies ist die Erweiterung für **microbitrobot**: eine Kombination aus einem
+**Roboter** und einer **Tafel**, für den Einsatz im Klassenzimmer. Der Roboter
+ist ein Selbstbausatz aus Holz. Ein Servomotor bewegt die **Arme**, ein
+Servomotor steuert das **Dashboard**, und es gibt eine **analoge Anzeige**.
+**NeoPixels** bilden Antenne, Augen, Nase, Mund und Lippen. Es gibt einen
+**Taster** und eine **Vibrationsspirale**, alles über das
+**Kitronik-Servoboard** verkabelt. Mit der **Fernbedienung** stecken Kinder ihr
+eigenes micro:bit-Projekt an die Robotertafel und steuern es direkt.
+
+### Français
+
+Ceci est l'extension pour **microbitrobot** : une combinaison d'un **robot** et
+d'un **tableau**, conçue pour la classe. Le robot est un kit à construire
+soi-même en bois. Un servomoteur actionne les **bras**, un servomoteur pilote le
+**tableau de bord**, et il y a une **jauge analogique**. Des **NeoPixels**
+forment l'antenne, les yeux, le nez, la bouche et les lèvres. Il y a un **bouton
+poussoir** et une **spirale vibrante**, le tout câblé via la **carte servo
+Kitronik**. Avec la **télécommande**, les enfants branchent leur propre projet
+micro:bit sur le tableau robot et le commandent directement.
+
+### Español
+
+Esta es la extensión para **microbitrobot**: una combinación de un **robot** y
+una **pizarra**, diseñada para el aula. El robot es un kit de autoconstrucción
+de madera. Un servomotor mueve los **brazos**, un servomotor acciona el
+**tablero**, y hay un **medidor analógico**. Los **NeoPixels** forman la antena,
+los ojos, la nariz, la boca y los labios. Hay un **botón pulsador** y una
+**espiral vibratoria**, todo cableado a través de la **placa de servos
+Kitronik**. Con el **mando a distancia**, los niños conectan su propio proyecto
+micro:bit a la pizarra robot y lo controlan directamente.
+
 ## Supported targets
 
 * for PXT/microbit
