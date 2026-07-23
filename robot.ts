@@ -306,7 +306,13 @@ namespace robot {
             ? omkeerServo3
             : omkeerServo2;
         if (inverted) degrees = 180 - degrees;
-        kitronik_simple_servo.setServoAngle(servoChoice, degrees);
+        // Drive the servo pin directly with a literal pin so the micro:bit
+        // simulator can detect and display the servo (servo2 = P15, servo3 = P16).
+        if (servoChoice == kitronik_simple_servo.ServoChoice.servo3) {
+            pins.servoWritePin(AnalogPin.P16, degrees);
+        } else {
+            pins.servoWritePin(AnalogPin.P15, degrees);
+        }
     }
 
     function beweegArmen(expression: RobotExpression): void {
