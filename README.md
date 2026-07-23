@@ -1,23 +1,48 @@
-# pxt-robotph
+# Robot face
 
 A MakeCode extension for the micro:bit to control a robot face made of a
-NeoPixel ring (16 LEDs by default).
+NeoPixel ring (16 LEDs by default). The blocks are localized and follow the
+editor language (English, Dutch, German, French and Spanish).
 
-## Add in MakeCode
+## ~ hint
 
-1. Open [makecode.microbit.org](https://makecode.microbit.org).
-2. Click the gear icon -> **Extensions**.
-3. Paste the URL of this repository and search.
-4. Click the `Robot` tile to add the blocks.
+Add this extension in MakeCode via the gear icon -> **Extensions**, then paste
+the URL of this repository and click the `Robot` tile.
+
+## ~
+
+## Basic usage
+
+Initialize the robot face, set the brightness and show an expression:
+
+```blocks
+robot.initialize(DigitalPin.P8, 16)
+robot.setBrightness(60)
+robot.showExpression(RobotExpression.Happy, NeoPixelColors.Yellow)
+```
+
+Use ``||robot.setColor||`` to color a single part of the face, and
+``||robot.clear||`` to turn a part off:
+
+```blocks
+robot.initialize(DigitalPin.P8, 16)
+robot.setColor(RobotPart.Eyes, NeoPixelColors.Green)
+robot.setColor(RobotPart.Lips, NeoPixelColors.Red)
+robot.clear(RobotPart.Nose)
+```
+
+## ~ hint
+
+**Simulator:** due to a bug in the micro:bit simulator, NeoPixels on double-digit
+pins (P10–P16) are not shown correctly. Use a pin P0–P9 (such as **P8**) if you
+want to see the strip in the simulator. On real hardware any pin works.
+
+## ~
 
 ## Hardware
 
 * micro:bit
 * NeoPixel ring with 16 LEDs, data pin defaults to **P8**
-
-> **Note (simulator):** due to a bug in the micro:bit simulator, NeoPixels on
-> double-digit pins (P10–P16) are not shown correctly. Use a pin P0–P9 (such as
-> P8) if you want to see the strip in the simulator. On real hardware any pin works.
 
 The LED layout of the face (index in the ring):
 
@@ -34,24 +59,12 @@ The LED layout of the face (index in the ring):
 
 ## Blocks
 
-* **initialize robot on pin ... with ... LEDs** - set the data pin and number of LEDs.
-* **set brightness to ...** - brightness from 0 to 255.
-* **set ... to color ...** - color a part (eyes, left eye, right eye, nose, lips, upper lip, lower lip, tinkywinki or the whole face).
-* **clear ...** - turn a part off.
-* **show expression ... with color ...** - show an expression (happy, angry, sad, surprised).
-
-## Languages
-
-The blocks are localized and follow the editor language. Translations are provided
-for English, Dutch, German, French and Spanish.
-
-## Example
-
-```typescript
-robot.initialize(DigitalPin.P8, 16)
-robot.setBrightness(60)
-robot.showExpression(RobotExpression.Happy, NeoPixelColors.Yellow)
-```
+* ``||robot.initialize||`` - set the data pin and number of LEDs.
+* ``||robot.setBrightness||`` - brightness from 0 to 255.
+* ``||robot.setColor||`` - color a part (eyes, left eye, right eye, nose, lips, upper lip, lower lip, tinkywinki or the whole face).
+* ``||robot.clear||`` - turn a part off.
+* ``||robot.showExpression||`` - show an expression (happy, angry, sad, surprised).
+* ``||robot.mirrorToScreen||`` - also mirror the expression on the 5x5 LED screen.
 
 ## Supported targets
 
