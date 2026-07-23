@@ -21,17 +21,22 @@ NeoPixel-ring (standaard 16 LEDs).
 
 De LED-indeling van het gezicht (index in de ring):
 
-| Onderdeel    | LED-indexen   |
-|--------------|---------------|
-| Ogen         | 0, 1, 6, 7    |
-| Mond         | 2, 3, 4, 5    |
-| Wenkbrauwen  | 8, 9, 14, 15  |
+| Onderdeel   | LED-indexen   |
+|-------------|---------------|
+| tinkywinki  | 0             |
+| ogen        | 1, 2          |
+| oog_links   | 1             |
+| oog_rechts  | 2             |
+| neus        | 3             |
+| lippen      | 4 t/m 15      |
+| lip_boven   | 4 t/m 9       |
+| lip_onder   | 10 t/m 15     |
 
 ## Blokken
 
 * **initialiseer robot op pin ... met ... LEDs** - stel de datapin en het aantal LEDs in.
 * **zet helderheid op ...** - helderheid van 0 tot 255.
-* **zet ... op kleur ...** - kleur een onderdeel (ogen, mond, wenkbrauwen of het hele gezicht).
+* **zet ... op kleur ...** - kleur een onderdeel (ogen, linkeroog, rechteroog, neus, lippen, bovenlip, onderlip, tinkywinki of het hele gezicht).
 * **wis ...** - zet een onderdeel uit.
 * **toon expressie ... met kleur ...** - toon een expressie (blij, boos, verdrietig, verrast).
 

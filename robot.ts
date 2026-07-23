@@ -8,10 +8,20 @@ namespace robot {
     export enum RobotOnderdeel {
         //% block="ogen"
         Ogen,
-        //% block="mond"
-        Mond,
-        //% block="wenkbrauwen"
-        Wenkbrauwen,
+        //% block="linkeroog"
+        OogLinks,
+        //% block="rechteroog"
+        OogRechts,
+        //% block="neus"
+        Neus,
+        //% block="lippen"
+        Lippen,
+        //% block="bovenlip"
+        LipBoven,
+        //% block="onderlip"
+        LipOnder,
+        //% block="tinkywinki"
+        Tinkywinki,
         //% block="gezicht"
         Gezicht
     }
@@ -32,6 +42,16 @@ namespace robot {
     let LED_MODE: NeoPixelMode = NeoPixelMode.RGB;
     let gezicht: neopixel.Strip;
     let spiegelNaarScherm: boolean = true;
+
+    // Onderdelen van het gezicht, uitgedrukt als ranges op de LED-strip.
+    let tinkywinki: neopixel.Strip;
+    let ogen: neopixel.Strip;
+    let neus: neopixel.Strip;
+    let lippen: neopixel.Strip;
+    let lip_boven: neopixel.Strip;
+    let lip_onder: neopixel.Strip;
+    let oog_links: neopixel.Strip;
+    let oog_rechts: neopixel.Strip;
 
     //% blockId="robot_init"
     //% block="initialiseer robot op pin %pin met %aantal LEDs als %mode"
@@ -69,20 +89,7 @@ namespace robot {
     //% parts="robotface"
     export function setKleur(onderdeel: RobotOnderdeel, kleur: number): void {
         initGezicht();
-        switch (onderdeel) {
-            case RobotOnderdeel.Ogen:
-                kleurOgen(kleur);
-                break;
-            case RobotOnderdeel.Mond:
-                kleurMond(kleur);
-                break;
-            case RobotOnderdeel.Wenkbrauwen:
-                kleurWenkbrauwen(kleur);
-                break;
-            case RobotOnderdeel.Gezicht:
-                kleurGezicht(kleur);
-                break;
-        }
+        vulOnderdeel(onderdeel, kleur);
         gezicht.show();
     }
 
@@ -93,20 +100,7 @@ namespace robot {
     //% parts="robotface"
     export function wis(onderdeel: RobotOnderdeel): void {
         initGezicht();
-        switch (onderdeel) {
-            case RobotOnderdeel.Ogen:
-                kleurOgen(NeoPixelColors.Black);
-                break;
-            case RobotOnderdeel.Mond:
-                kleurMond(NeoPixelColors.Black);
-                break;
-            case RobotOnderdeel.Wenkbrauwen:
-                kleurWenkbrauwen(NeoPixelColors.Black);
-                break;
-            case RobotOnderdeel.Gezicht:
-                gezicht.clear();
-                break;
-        }
+        vulOnderdeel(onderdeel, NeoPixelColors.Black);
         gezicht.show();
     }
 
@@ -119,20 +113,26 @@ namespace robot {
     export function toonExpressie(expressie: RobotExpressie, kleur: number): void {
         initGezicht();
         gezicht.clear();
-        kleurOgen(kleur);
+        vul(ogen, kleur);
         switch (expressie) {
             case RobotExpressie.Blij:
-                kleurMond(kleur);
+                // Glimlach: alleen de onderlip krult omhoog.
+                vul(lip_onder, kleur);
                 break;
             case RobotExpressie.Boos:
-                kleurWenkbrauwen(kleur);
-                kleurMond(kleur);
+                // Samengeperste mond met gerimpelde neus.
+                vul(lip_boven, kleur);
+                vul(lip_onder, kleur);
+                vul(neus, kleur);
                 break;
             case RobotExpressie.Verdrietig:
-                kleurWenkbrauwen(kleur);
+                // Frons: alleen de bovenlip.
+                vul(lip_boven, kleur);
                 break;
             case RobotExpressie.Verrast:
-                kleurMond(kleur);
+                // Open mond met oplichtende tinkywinki.
+                vul(lippen, kleur);
+                vul(tinkywinki, kleur);
                 break;
         }
         gezicht.show();
@@ -195,34 +195,56 @@ namespace robot {
         if (gezicht) return;
         gezicht = neopixel.create(LED_PIN, LED_COUNT, LED_MODE);
         gezicht.setBrightness(40);
+
+        // Vertaal de onderdelen naar LED-nummers via ranges.
+        tinkywinki = gezicht.range(0, 1);
+        ogen = gezicht.range(1, 2);
+        neus = gezicht.range(3, 1);
+        lippen = gezicht.range(4, 12);
+        lip_boven = lippen.range(0, 6);
+        lip_onder = lippen.range(6, 6);
+        oog_links = ogen.range(0, 1);
+        oog_rechts = ogen.range(1, 1);
+
         gezicht.clear();
         gezicht.show();
     }
 
-    function kleurOgen(kleur: number): void {
-        gezicht.setPixelColor(0, kleur);
-        gezicht.setPixelColor(1, kleur);
-        gezicht.setPixelColor(6, kleur);
-        gezicht.setPixelColor(7, kleur);
+    function vulOnderdeel(onderdeel: RobotOnderdeel, kleur: number): void {
+        switch (onderdeel) {
+            case RobotOnderdeel.Ogen:
+                vul(ogen, kleur);
+                break;
+            case RobotOnderdeel.OogLinks:
+                vul(oog_links, kleur);
+                break;
+            case RobotOnderdeel.OogRechts:
+                vul(oog_rechts, kleur);
+                break;
+            case RobotOnderdeel.Neus:
+                vul(neus, kleur);
+                break;
+            case RobotOnderdeel.Lippen:
+                vul(lippen, kleur);
+                break;
+            case RobotOnderdeel.LipBoven:
+                vul(lip_boven, kleur);
+                break;
+            case RobotOnderdeel.LipOnder:
+                vul(lip_onder, kleur);
+                break;
+            case RobotOnderdeel.Tinkywinki:
+                vul(tinkywinki, kleur);
+                break;
+            case RobotOnderdeel.Gezicht:
+                vul(gezicht, kleur);
+                break;
+        }
     }
 
-    function kleurMond(kleur: number): void {
-        gezicht.setPixelColor(2, kleur);
-        gezicht.setPixelColor(3, kleur);
-        gezicht.setPixelColor(4, kleur);
-        gezicht.setPixelColor(5, kleur);
-    }
-
-    function kleurWenkbrauwen(kleur: number): void {
-        gezicht.setPixelColor(8, kleur);
-        gezicht.setPixelColor(9, kleur);
-        gezicht.setPixelColor(14, kleur);
-        gezicht.setPixelColor(15, kleur);
-    }
-
-    function kleurGezicht(kleur: number): void {
-        for (let i = 0; i < LED_COUNT; i++) {
-            gezicht.setPixelColor(i, kleur);
+    function vul(deel: neopixel.Strip, kleur: number): void {
+        for (let i = 0; i < deel.length(); i++) {
+            deel.setPixelColor(i, kleur);
         }
     }
 }

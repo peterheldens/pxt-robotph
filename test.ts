@@ -8,13 +8,17 @@ basic.forever(function () {
     basic.pause(500)
     robot.wis(robot.RobotOnderdeel.Ogen)
 
-    robot.setKleur(robot.RobotOnderdeel.Mond, NeoPixelColors.Green)
+    robot.setKleur(robot.RobotOnderdeel.Lippen, NeoPixelColors.Green)
     basic.pause(500)
-    robot.wis(robot.RobotOnderdeel.Mond)
+    robot.wis(robot.RobotOnderdeel.Lippen)
 
-    robot.setKleur(robot.RobotOnderdeel.Wenkbrauwen, NeoPixelColors.Blue)
+    robot.setKleur(robot.RobotOnderdeel.Neus, NeoPixelColors.Blue)
     basic.pause(500)
-    robot.wis(robot.RobotOnderdeel.Wenkbrauwen)
+    robot.wis(robot.RobotOnderdeel.Neus)
+
+    robot.setKleur(robot.RobotOnderdeel.Tinkywinki, NeoPixelColors.Purple)
+    basic.pause(500)
+    robot.wis(robot.RobotOnderdeel.Tinkywinki)
 
     robot.toonExpressie(robot.RobotExpressie.Blij, NeoPixelColors.Yellow)
     basic.pause(500)
