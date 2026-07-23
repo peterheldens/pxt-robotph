@@ -68,6 +68,7 @@ namespace robot {
     let LED_MODE: NeoPixelMode = NeoPixelMode.RGB;
     let gezicht: neopixel.Strip;
     let spiegelNaarScherm: boolean = true;
+    let spiegelNaarArmen: boolean = true;
 
     // Parts of the face, expressed as ranges on the LED strip.
     let tinkywinki: neopixel.Strip;
@@ -169,7 +170,6 @@ namespace robot {
             case RobotExpression.Happy:
                 // Smile: only the lower lip curves up.
                 vul(lip_onder, color);
-                kitronik_simple_servo.setServoAngle(kitronik_simple_servo.ServoChoice.servo2, 180);
                 break;
             case RobotExpression.Angry:
                 // Pressed lips with a wrinkled nose.
@@ -180,7 +180,6 @@ namespace robot {
             case RobotExpression.Sad:
                 // Frown: only the upper lip.
                 vul(lip_boven, color);
-                kitronik_simple_servo.setServoAngle(kitronik_simple_servo.ServoChoice.servo2, 20);
                 break;
             case RobotExpression.Surprised:
                 // Open mouth with a lit-up tinkywinki.
@@ -190,6 +189,7 @@ namespace robot {
         }
         gezicht.show();
         tekenOpScherm(expression);
+        beweegArmen(expression);
     }
 
     /**
@@ -204,6 +204,19 @@ namespace robot {
     export function mirrorToScreen(on: boolean): void {
         spiegelNaarScherm = on;
         if (!on) basic.clearScreen();
+    }
+
+    /**
+     * Also move the arms (servo2) to match the expression.
+     * @param on true to also move the arms with the expression
+     */
+    //% blockId="robot_arms_mirror"
+    //% block="also move arms with expression %on"
+    //% on.shadow="toggleOnOff" on.defl=true
+    //% weight=64
+    //% group="Expressions"
+    export function mirrorToArms(on: boolean): void {
+        spiegelNaarArmen = on;
     }
 
     /**
@@ -262,6 +275,30 @@ namespace robot {
             ? kitronik_simple_servo.ServoChoice.servo3
             : kitronik_simple_servo.ServoChoice.servo2;
         kitronik_simple_servo.setServoAngle(servoChoice, degrees);
+    }
+
+    function beweegArmen(expression: RobotExpression): void {
+        if (!spiegelNaarArmen) return;
+        let degrees = 90;
+        switch (expression) {
+            case RobotExpression.Happy:
+                // Arms raised up high.
+                degrees = 180;
+                break;
+            case RobotExpression.Surprised:
+                // Arms flung up in surprise.
+                degrees = 150;
+                break;
+            case RobotExpression.Angry:
+                // Arms held out straight.
+                degrees = 90;
+                break;
+            case RobotExpression.Sad:
+                // Arms hanging down low.
+                degrees = 20;
+                break;
+        }
+        kitronik_simple_servo.setServoAngle(kitronik_simple_servo.ServoChoice.servo2, degrees);
     }
 
     function tekenOpScherm(expression: RobotExpression): void {

@@ -18,6 +18,7 @@
     "robot.clear|block": "wis %part",
     "robot.initialize|block": "initialiseer robot op pin %pin met %count LEDs als %mode",
     "robot.mirrorToScreen|block": "toon gezicht ook op micro:bit-scherm %on",
+    "robot.mirrorToArms|block": "beweeg armen ook met expressie %on",
     "robot.turnServoToPosition|block": "draai %servo naar positie %position",
     "robot.turnServoWithKnob|block": "draai %servo met draaiknop verbonden aan %knob",
     "robot.setBrightness|block": "zet helderheid op %brightness",

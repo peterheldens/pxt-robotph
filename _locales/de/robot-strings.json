@@ -18,6 +18,7 @@
     "robot.clear|block": "lösche %part",
     "robot.initialize|block": "initialisiere Roboter an Pin %pin mit %count LEDs als %mode",
     "robot.mirrorToScreen|block": "Gesicht auch auf micro:bit-Bildschirm anzeigen %on",
+    "robot.mirrorToArms|block": "Arme auch mit dem Ausdruck bewegen %on",
     "robot.turnServoToPosition|block": "drehe %servo zu Position %position",
     "robot.turnServoWithKnob|block": "drehe %servo mit Drehknopf an %knob",
     "robot.setBrightness|block": "setze Helligkeit auf %brightness",

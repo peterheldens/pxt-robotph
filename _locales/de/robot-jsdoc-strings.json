@@ -2,6 +2,7 @@
     "robot.clear": "Schalte einen Teil des Gesichts aus.",
     "robot.initialize": "Initialisiere das Robotergesicht am angegebenen Datenpin. Schließe den NeoPixel an Servo1 der Servoplatine an: Servo1 liegt nämlich an Pin P8.",
     "robot.mirrorToScreen": "Zeige den Ausdruck auch auf dem 5x5 LED-Bildschirm des micro:bit.",
+    "robot.mirrorToArms": "Bewege die Arme (servo2) passend zum Ausdruck.",
     "robot.turnServoToPosition": "Drehe einen Servo zu einer Position (hoch, mittel oder niedrig).",
     "robot.turnServoWithKnob": "Drehe einen Servo auf einen Winkel (0-180) anhand eines Drehknopfs (Potentiometer) an einem Analogpin.",
     "robot.setBrightness": "Stelle die Gesamthelligkeit des Robotergesichts ein (0-255).",
