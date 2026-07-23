@@ -22,7 +22,7 @@
     "robot.turnServoToPosition|block": "girar %servo a la posición %position",
     "robot.turnServoWithKnob|block": "girar %servo con potenciómetro conectado a %knob",
     "robot.reverseServo|block": "invertir la dirección de %servo %on",
-    "robot.limitServoRange|block": "limitar el rango del servo de %start a %end",
+    "robot.limitServoRange|block": "limitar el rango de %servo de %start a %end",
     "robot.setBrightness|block": "ajustar brillo a %brightness",
     "robot.setColor|block": "poner %part en color %color",
     "robot.showExpression|block": "mostrar expresión %expression con color %color",

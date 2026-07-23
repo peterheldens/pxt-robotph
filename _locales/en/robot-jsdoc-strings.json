@@ -6,7 +6,7 @@
     "robot.turnServoToPosition": "Turn a servo to a position (high, middle or low).",
     "robot.turnServoWithKnob": "Turn a servo to an angle (0-180) from a knob (potentiometer) connected to an analog pin.",
     "robot.reverseServo": "Reverse the turning direction of a servo. When on, an angle of 180 becomes 0, 0 becomes 180, 30 becomes 150, and so on.",
-    "robot.limitServoRange": "Limit the servo range so the servo can only move between a fixed start and end position. The start must be smaller than the end.",
+    "robot.limitServoRange": "Limit the range of a servo so it can only move between a fixed start and end position. The start must be smaller than the end.",
     "robot.setBrightness": "Set the overall brightness of the robot face (0-255).",
     "robot.setColor": "Set the color of a part of the face.",
     "robot.showExpression": "Show an expression on the robot face."

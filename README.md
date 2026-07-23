@@ -98,7 +98,7 @@ The LED layout of the face (index in the ring):
 * ``||robot.turnServoToPosition||`` - turn servo2 or servo3 to a position (high, middle or low).
 * ``||robot.turnServoWithKnob||`` - turn servo2 or servo3 with a knob (potentiometer) connected to analog pin P0, P1 or P2.
 * ``||robot.reverseServo||`` - reverse the turning direction of servo2 or servo3 (an angle of 180 becomes 0, 30 becomes 150, and so on).
-* ``||robot.limitServoRange||`` - limit the servo range to a fixed start and end angle (for example from 10 to 170), so the servo can only move within that range.
+* ``||robot.limitServoRange||`` - limit the range of servo2 or servo3 to a fixed start and end angle (for example from 10 to 170), so that servo can only move within that range.
 
 ## Tutorials
 
