@@ -1,7 +1,7 @@
    {
        "name": "robot",
        "description": "An extension to control a robot face made of NeoPixels.",
-       "version": "1.0.31",
+       "version": "1.0.32",
        "license": "MIT",
        "dependencies": {
            "core": "*",
@@ -11,6 +11,7 @@
        "files": [
            "robot.ts",
            "README.md",
+           "getting-started.md",
            "icon.png",
            "pxtparts.json",
            "_locales/en/robot-strings.json",
