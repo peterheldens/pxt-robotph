@@ -19,7 +19,7 @@
     "robot.initialize|block": "initialisiere Roboter an Pin %pin mit %count LEDs als %mode",
     "robot.mirrorToScreen|block": "Gesicht auch auf micro:bit-Bildschirm anzeigen %on",
     "robot.setArm|block": "bewege Arm %position",
-    "robot.setArmFromAnalog|block": "bewege Arm von Analogeingang P2",
+    "robot.turnServoWithKnob|block": "drehe %servo mit Drehknopf an %knob",
     "robot.setBrightness|block": "setze Helligkeit auf %brightness",
     "robot.setColor|block": "setze %part auf Farbe %color",
     "robot.showExpression|block": "zeige Ausdruck %expression mit Farbe %color",

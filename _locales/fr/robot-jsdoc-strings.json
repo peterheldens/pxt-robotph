@@ -3,7 +3,7 @@
     "robot.initialize": "Initialiser le visage du robot sur la broche de données indiquée. Branchez le NeoPixel sur Servo1 de la carte servo : Servo1 est en effet câblé sur la broche P8.",
     "robot.mirrorToScreen": "Afficher aussi l'expression sur l'écran LED 5x5 du micro:bit.",
     "robot.setArm": "Déplacer le bras du robot vers une position en pilotant le servo 2.",
-    "robot.setArmFromAnalog": "Régler l'angle du bras (0-180) selon l'entrée analogique de la broche P2 en pilotant le servo 2.",
+    "robot.turnServoWithKnob": "Tourner un servo à un angle (0-180) selon un potentiomètre connecté à une broche analogique.",
     "robot.setBrightness": "Régler la luminosité générale du visage du robot (0-255).",
     "robot.setColor": "Colorer une partie du visage.",
     "robot.showExpression": "Montrer une expression sur le visage du robot."

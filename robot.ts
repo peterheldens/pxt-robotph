@@ -43,6 +43,22 @@ enum ArmPosition {
     Low
 }
 
+enum RobotServo {
+    //% block="servo2"
+    Servo2,
+    //% block="servo3"
+    Servo3
+}
+
+enum KnobPin {
+    //% block="P0"
+    P0,
+    //% block="P1"
+    P1,
+    //% block="P2"
+    P2
+}
+
 //% color=#2699BF icon="\uf110" block="Robot"
 //% groups='["Setup", "Colors", "Expressions", "Arms"]'
 namespace robot {
@@ -215,17 +231,33 @@ namespace robot {
     }
 
     /**
-     * Set the arm angle (0-180) from the analog input on pin P2, driving servo 2.
+     * Turn a servo to an angle (0-180) from a knob (potentiometer) connected to an analog pin.
+     * @param servo the servo to drive: servo2 or servo3
+     * @param knob the analog pin the knob is connected to
      */
-    //% blockId="robot_set_arm_analog"
-    //% block="move arm from analog P2"
+    //% blockId="robot_turn_servo_knob"
+    //% block="turn %servo with knob connected to %knob"
     //% weight=55
     //% group="Arms"
-    export function setArmFromAnalog(): void {
-        let value = pins.analogReadPin(AnalogPin.P2);
-        let degrees = Math.map(value, 0, 1023, 0, 180);
-        degrees = Math.round(Math.clamp(0, 180, degrees));
-        kitronik_simple_servo.setServoAngle(kitronik_simple_servo.ServoChoice.servo2, degrees);
+    export function turnServoWithKnob(servo: RobotServo, knob: KnobPin): void {
+        let analogPin = AnalogPin.P0;
+        switch (knob) {
+            case KnobPin.P0:
+                analogPin = AnalogPin.P0;
+                break;
+            case KnobPin.P1:
+                analogPin = AnalogPin.P1;
+                break;
+            case KnobPin.P2:
+                analogPin = AnalogPin.P2;
+                break;
+        }
+        let value = pins.analogReadPin(analogPin);
+        let degrees = Math.round(Math.clamp(0, 180, Math.map(value, 0, 1023, 0, 180)));
+        let servoChoice = servo == RobotServo.Servo3
+            ? kitronik_simple_servo.ServoChoice.servo3
+            : kitronik_simple_servo.ServoChoice.servo2;
+        kitronik_simple_servo.setServoAngle(servoChoice, degrees);
     }
 
     function tekenOpScherm(expression: RobotExpression): void {

@@ -3,7 +3,7 @@
     "robot.initialize": "Initialize the robot face on the given data pin. Connect the NeoPixel to Servo1 on the servo board: Servo1 is wired to pin P8.",
     "robot.mirrorToScreen": "Also mirror the expression on the micro:bit's 5x5 LED screen.",
     "robot.setArm": "Move the robot arm to a position by driving servo 2.",
-    "robot.setArmFromAnalog": "Set the arm angle (0-180) from the analog input on pin P2, driving servo 2.",
+    "robot.turnServoWithKnob": "Turn a servo to an angle (0-180) from a knob (potentiometer) connected to an analog pin.",
     "robot.setBrightness": "Set the overall brightness of the robot face (0-255).",
     "robot.setColor": "Set the color of a part of the face.",
     "robot.showExpression": "Show an expression on the robot face."

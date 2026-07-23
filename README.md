@@ -50,7 +50,7 @@ want to see the strip in the simulator. On real hardware any pin works.
 **Wiring:** the extension uses the servo board.
 * Connect the **NeoPixel** face to **Servo1** on the servo board, because Servo1 is wired to pin **P8** (the default data pin).
 * The **arm** is driven by **Servo2** (pin P15).
-* The analog input for ``||robot.setArmFromAnalog||`` is read from pin **P2**.
+* The knob (potentiometer) for ``||robot.turnServoWithKnob||`` is read from an analog pin (P0, P1 or P2).
 
 ## ~
 
@@ -76,7 +76,7 @@ The LED layout of the face (index in the ring):
 * ``||robot.showExpression||`` - show an expression (happy, angry, sad, surprised).
 * ``||robot.mirrorToScreen||`` - also mirror the expression on the 5x5 LED screen.
 * ``||robot.setArm||`` - move the arm high, middle or low (servo2).
-* ``||robot.setArmFromAnalog||`` - set the arm angle (0-180) from the analog input on pin P2 (servo2).
+* ``||robot.turnServoWithKnob||`` - turn servo2 or servo3 with a knob (potentiometer) connected to analog pin P0, P1 or P2.
 
 ## Supported targets
 

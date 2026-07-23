@@ -19,7 +19,7 @@
     "robot.initialize|block": "initialiseer robot op pin %pin met %count LEDs als %mode",
     "robot.mirrorToScreen|block": "toon gezicht ook op micro:bit-scherm %on",
     "robot.setArm|block": "beweeg arm %position",
-    "robot.setArmFromAnalog|block": "beweeg arm met analoge invoer P2",
+    "robot.turnServoWithKnob|block": "draai %servo met draaiknop verbonden aan %knob",
     "robot.setBrightness|block": "zet helderheid op %brightness",
     "robot.setColor|block": "zet %part op kleur %color",
     "robot.showExpression|block": "toon expressie %expression met kleur %color",
