@@ -71,6 +71,8 @@ namespace robot {
     let spiegelNaarArmen: boolean = true;
     let omkeerServo2: boolean = false;
     let omkeerServo3: boolean = false;
+    let servoMinHoek: number = 0;
+    let servoMaxHoek: number = 180;
 
     // Parts of the face, expressed as ranges on the LED strip.
     let tinkywinki: neopixel.Strip;
@@ -301,11 +303,34 @@ namespace robot {
         }
     }
 
+    /**
+     * Limit the servo range so the servo can only move between a fixed start
+     * and end position. The start must be smaller than the end.
+     * @param start the lowest angle the servo may move to (0-180)
+     * @param end the highest angle the servo may move to (0-180)
+     */
+    //% blockId="robot_limit_servo_range"
+    //% block="limit servo range from %start to %end"
+    //% start.min=0 start.max=180 start.defl=0
+    //% end.min=0 end.max=180 end.defl=180
+    //% weight=45
+    //% group="Arms"
+    export function limitServoRange(start: number, end: number): void {
+        start = Math.clamp(0, 180, start);
+        end = Math.clamp(0, 180, end);
+        if (start < end) {
+            servoMinHoek = start;
+            servoMaxHoek = end;
+        }
+    }
+
     function zetServo(servoChoice: kitronik_simple_servo.ServoChoice, degrees: number): void {
         let inverted = servoChoice == kitronik_simple_servo.ServoChoice.servo3
             ? omkeerServo3
             : omkeerServo2;
         if (inverted) degrees = 180 - degrees;
+        // Keep the servo within the configured range.
+        degrees = Math.clamp(servoMinHoek, servoMaxHoek, degrees);
         // Drive the servo pin directly with a literal pin so the micro:bit
         // simulator can detect and display the servo (servo2 = P15, servo3 = P16).
         if (servoChoice == kitronik_simple_servo.ServoChoice.servo3) {

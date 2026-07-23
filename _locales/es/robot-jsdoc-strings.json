@@ -6,6 +6,7 @@
     "robot.turnServoToPosition": "Gira un servo a una posición (alto, medio o bajo).",
     "robot.turnServoWithKnob": "Gira un servo a un ángulo (0-180) según un potenciómetro conectado a un pin analógico.",
     "robot.reverseServo": "Invierte el sentido de giro de un servo. Si está activado, un ángulo de 180 pasa a 0, 0 pasa a 180, 30 pasa a 150, etc.",
+    "robot.limitServoRange": "Limita el rango del servo para que solo pueda moverse entre una posición de inicio y de fin fijas. El inicio debe ser menor que el fin.",
     "robot.setBrightness": "Ajusta el brillo general de la cara del robot (0-255).",
     "robot.setColor": "Colorea una parte de la cara.",
     "robot.showExpression": "Muestra una expresión en la cara del robot."

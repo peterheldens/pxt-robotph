@@ -6,6 +6,7 @@
     "robot.turnServoToPosition": "Drehe einen Servo zu einer Position (hoch, mittel oder niedrig).",
     "robot.turnServoWithKnob": "Drehe einen Servo auf einen Winkel (0-180) anhand eines Drehknopfs (Potentiometer) an einem Analogpin.",
     "robot.reverseServo": "Kehre die Drehrichtung eines Servos um. Wenn aktiv, wird aus 180 nun 0, aus 0 wird 180, aus 30 wird 150 und so weiter.",
+    "robot.limitServoRange": "Begrenze den Servobereich, sodass sich der Servo nur zwischen einer festen Start- und Endposition bewegen kann. Der Start muss kleiner als das Ende sein.",
     "robot.setBrightness": "Stelle die Gesamthelligkeit des Robotergesichts ein (0-255).",
     "robot.setColor": "Färbe einen Teil des Gesichts.",
     "robot.showExpression": "Zeige einen Ausdruck auf dem Robotergesicht."

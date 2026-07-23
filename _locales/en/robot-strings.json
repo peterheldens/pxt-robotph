@@ -22,6 +22,7 @@
     "robot.turnServoToPosition|block": "turn %servo to position %position",
     "robot.turnServoWithKnob|block": "turn %servo with knob connected to %knob",
     "robot.reverseServo|block": "reverse direction of %servo %on",
+    "robot.limitServoRange|block": "limit servo range from %start to %end",
     "robot.setBrightness|block": "set brightness to %brightness",
     "robot.setColor|block": "set %part to color %color",
     "robot.showExpression|block": "show expression %expression with color %color",
