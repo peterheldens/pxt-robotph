@@ -200,7 +200,7 @@ namespace robot {
      * @param on true to also show the face on the screen
      */
     //% blockId="robot_screen_mirror"
-    //% block="also show face on micro:bit screen %on"
+    //% block="pass expression through to screen %on"
     //% on.shadow="toggleOnOff" on.defl=true
     //% weight=65
     //% group="Expressions"
@@ -214,7 +214,7 @@ namespace robot {
      * @param on true to also move the arms with the expression
      */
     //% blockId="robot_arms_mirror"
-    //% block="also move arms with expression %on"
+    //% block="pass expression through to arms %on"
     //% on.shadow="toggleOnOff" on.defl=true
     //% weight=64
     //% group="Expressions"

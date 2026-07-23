@@ -93,8 +93,8 @@ The LED layout of the face (index in the ring):
 * ``||robot.setColor||`` - color a part (eyes, left eye, right eye, nose, lips, upper lip, lower lip, tinkywinki or the whole face).
 * ``||robot.clear||`` - turn a part off.
 * ``||robot.showExpression||`` - show an expression (happy, angry, sad, surprised). The arms (servo2) also move to match: happy up, surprised high, angry straight out, sad down.
-* ``||robot.mirrorToScreen||`` - also mirror the expression on the 5x5 LED screen.
-* ``||robot.mirrorToArms||`` - also move the arms (servo2) with the expression (on by default).
+* ``||robot.mirrorToScreen||`` - pass the expression through to the 5x5 LED screen.
+* ``||robot.mirrorToArms||`` - pass the expression through to the arms (servo2), on by default.
 * ``||robot.turnServoToPosition||`` - turn servo2 or servo3 to a position (high, middle or low).
 * ``||robot.turnServoWithKnob||`` - turn servo2 or servo3 with a knob (potentiometer) connected to analog pin P0, P1 or P2.
 * ``||robot.reverseServo||`` - reverse the turning direction of servo2 or servo3 (an angle of 180 becomes 0, 30 becomes 150, and so on).
