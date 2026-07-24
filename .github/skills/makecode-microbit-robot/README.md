@@ -8,25 +8,32 @@ can write MakeCode (Static TypeScript) programs and step-by-step tutorials that
 actually compile and respect the real hardware.
 
 The skill points at this repository's live files
-([`AGENTS.md`](../../AGENTS.md), [`robot.ts`](../../robot.ts),
-[`makecode-agent-system-prompt.md`](../../makecode-agent-system-prompt.md)) as the
-single source of truth, with an offline fallback cheat-sheet, so it stays correct
-as the extension evolves.
+([`AGENTS.md`](../../../AGENTS.md), [`robot.ts`](../../../robot.ts),
+[`makecode-agent-system-prompt.md`](../../../makecode-agent-system-prompt.md)) as
+the single source of truth, with an offline fallback cheat-sheet, so it stays
+correct as the extension evolves.
 
-## Install into Microsoft Scout CLI (or another agent)
+## Where it lives
 
-**Option A — from this repo, manually:**
+This folder is under **`.github/skills/`**, so agents that follow the
+[agentskills.io](https://agentskills.io) convention — including **Microsoft Scout
+CLI** and **GitHub Copilot** — discover it **automatically** when they work inside
+this repository. No manual step is needed here.
+
+## Install into another project / agent
+
+**Option A — copy the folder manually:**
 
 ```bash
-# Copy the skill folder into your agent's skills directory
-cp -r skills/makecode-microbit-robot /path/to/your-project/.github/skills/
+# Copy the skill into the target project's skills directory
+cp -r .github/skills/makecode-microbit-robot /path/to/your-project/.github/skills/
 # (Scout / Copilot discover skills under .github/skills/ automatically)
 ```
 
 On Windows PowerShell:
 
 ```powershell
-Copy-Item -Recurse skills\makecode-microbit-robot "$HOME\your-project\.github\skills\"
+Copy-Item -Recurse .github\skills\makecode-microbit-robot "$HOME\your-project\.github\skills\"
 ```
 
 **Option B — with the skills CLI (if the skill is published in a catalog):**

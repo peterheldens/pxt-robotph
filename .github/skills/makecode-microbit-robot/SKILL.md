@@ -1,6 +1,14 @@
 ---
 name: makecode-microbit-robot
 description: "Expert knowledge for writing MakeCode (Static TypeScript) programs and step-by-step tutorials for the BBC micro:bit and for Peter Heldens' wooden classroom robot (microbitrobot). Use whenever the task involves MakeCode micro:bit, the makecode.microbit.org editor, the robot's NeoPixel face / servo arms / dashboard / radio controller, or writing a MakeCode tutorial or extension block. Triggers: 'MakeCode', 'micro:bit', 'microbit', 'pxt', 'robot face', 'NeoPixel robot', 'servo arms', 'microbitrobot', 'MakeCode tutorial', 'peterheldens/pxt-robotph'."
+triggers:
+  - "MakeCode micro:bit"
+  - "program the robot"
+  - "microbitrobot"
+  - "NeoPixel face"
+  - "servo arms"
+  - "MakeCode tutorial"
+  - "pxt extension"
 ---
 
 # MakeCode micro:bit Robot skill

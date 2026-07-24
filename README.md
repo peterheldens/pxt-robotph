@@ -155,9 +155,9 @@ programs in TypeScript, produce step‑by‑step tutorials, and program this rob
 reading the repository.
 
 For agents that support **Agent Skills** (Microsoft Scout CLI, GitHub Copilot and
-others), the folder [**skills/makecode-microbit-robot**](skills/makecode-microbit-robot/)
-packages this knowledge as an importable skill. See its
-[README](skills/makecode-microbit-robot/README.md) for install instructions.
+others), the folder [**.github/skills/makecode-microbit-robot**](.github/skills/makecode-microbit-robot/)
+packages this knowledge as an auto-discovered skill. See its
+[README](.github/skills/makecode-microbit-robot/README.md) for details.
 
 ## Development
 

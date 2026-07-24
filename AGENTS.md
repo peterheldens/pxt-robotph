@@ -12,6 +12,12 @@
 > whole file first**, then generate code. Treat the "Authoritative hardware
 > facts" and "Block API reference" sections as ground truth.
 
+> **Agent skill.** This repository ships an auto-discovered Agent Skill at
+> [`.github/skills/makecode-microbit-robot/`](.github/skills/makecode-microbit-robot/SKILL.md).
+> Agents that follow the `.github/skills/` convention (Microsoft Scout CLI, GitHub
+> Copilot) load it automatically when working in this repo; it points back to this
+> file, `robot.ts` and `makecode-agent-system-prompt.md` as ground truth.
+
 ---
 
 ## 1. What this robot is
