@@ -2,6 +2,11 @@
 robot.initialize(DigitalPin.P8, 16, NeoPixelMode.RGB)
 robot.setBrightness(60)
 robot.mirrorToScreen(true)
+robot.showServos(AnalogPin.P15, AnalogPin.P16)
+
+robot.onRadioReceived(function (servonaam, waarde) {
+    robot.turnServoToValue(servonaam, waarde)
+})
 
 basic.forever(function () {
     robot.turnServoToPosition(RobotServo.Servo2, ArmPosition.High)

@@ -10,5 +10,7 @@
     "robot.limitServoRange": "Beperk de range van een servo zodat deze alleen tussen een vaste start- en eindpositie kan bewegen. De start moet kleiner zijn dan het eind.",
     "robot.setBrightness": "Stel de algehele helderheid van het robotgezicht in (0-255).",
     "robot.setColor": "Geef een onderdeel van het gezicht een kleur.",
-    "robot.showExpression": "Toon een expressie op het robotgezicht."
+    "robot.showExpression": "Toon een expressie op het robotgezicht.",
+    "robot.showServos": "Toon de servo's in de simulator en stel hun pinnen in zodat de arm- (servo2) en dashboardservo (servo3) verschijnen en bewegen in de simulator.",
+    "robot.onRadioReceived": "Voer code uit wanneer de robot een naam en waarde via radio ontvangt. De naam wordt vertaald naar een servo zodat je hem in draai servo naar waarde kunt gebruiken."
 }

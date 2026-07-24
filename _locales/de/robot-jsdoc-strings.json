@@ -10,5 +10,7 @@
     "robot.limitServoRange": "Begrenze den Bereich eines Servos, sodass er sich nur zwischen einer festen Start- und Endposition bewegen kann. Der Start muss kleiner als das Ende sein.",
     "robot.setBrightness": "Stelle die Gesamthelligkeit des Robotergesichts ein (0-255).",
     "robot.setColor": "Färbe einen Teil des Gesichts.",
-    "robot.showExpression": "Zeige einen Ausdruck auf dem Robotergesicht."
+    "robot.showExpression": "Zeige einen Ausdruck auf dem Robotergesicht.",
+    "robot.showServos": "Zeigt die Servos im Simulator an und legt ihre Pins fest, damit der Arm- (servo2) und Dashboard-Servo (servo3) im Simulator erscheinen und sich bewegen.",
+    "robot.onRadioReceived": "Führt Code aus, wenn der Roboter einen Namen und Wert über Funk empfängt. Der Name wird in einen Servo übersetzt."
 }

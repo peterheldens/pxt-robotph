@@ -10,5 +10,7 @@
     "robot.limitServoRange": "Limita el rango de un servo para que solo pueda moverse entre una posición de inicio y de fin fijas. El inicio debe ser menor que el fin.",
     "robot.setBrightness": "Ajusta el brillo general de la cara del robot (0-255).",
     "robot.setColor": "Colorea una parte de la cara.",
-    "robot.showExpression": "Muestra una expresión en la cara del robot."
+    "robot.showExpression": "Muestra una expresión en la cara del robot.",
+    "robot.showServos": "Muestra los servos en el simulador y define sus pines para que los servos del brazo (servo2) y del panel (servo3) aparezcan y se muevan en el simulador.",
+    "robot.onRadioReceived": "Ejecuta código cuando el robot recibe un nombre y un valor por radio. El nombre se traduce a un servo."
 }

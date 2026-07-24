@@ -10,5 +10,7 @@
     "robot.limitServoRange": "Limit the range of a servo so it can only move between a fixed start and end position. The start must be smaller than the end.",
     "robot.setBrightness": "Set the overall brightness of the robot face (0-255).",
     "robot.setColor": "Set the color of a part of the face.",
-    "robot.showExpression": "Show an expression on the robot face."
+    "robot.showExpression": "Show an expression on the robot face.",
+    "robot.showServos": "Show the servos in the simulator and set their pins so the arm (servo2) and dashboard (servo3) servos appear and move in the simulator.",
+    "robot.onRadioReceived": "Run code when the robot receives a name and value over radio. The name is translated to a servo so it can be used in turn servo to value."
 }

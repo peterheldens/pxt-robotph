@@ -10,5 +10,7 @@
     "robot.limitServoRange": "Limiter la plage d'un servo pour qu'il ne puisse se déplacer qu'entre une position de début et de fin fixes. Le début doit être inférieur à la fin.",
     "robot.setBrightness": "Régler la luminosité générale du visage du robot (0-255).",
     "robot.setColor": "Colorer une partie du visage.",
-    "robot.showExpression": "Montrer une expression sur le visage du robot."
+    "robot.showExpression": "Montrer une expression sur le visage du robot.",
+    "robot.showServos": "Affiche les servos dans le simulateur et définit leurs broches afin que les servos du bras (servo2) et du tableau de bord (servo3) apparaissent et bougent dans le simulateur.",
+    "robot.onRadioReceived": "Exécute du code lorsque le robot reçoit un nom et une valeur par radio. Le nom est traduit en servo."
 }

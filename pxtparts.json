@@ -42,5 +42,93 @@
             { "part": true, "pinIndices": [2] },
             { "pinIndices": [0, 1] }
         ]
+    },
+    "robotservo2": {
+        "simulationBehavior": "microservo",
+        "visual": {
+            "builtIn": "microservo",
+            "width": 74.85,
+            "height": 200,
+            "pinDistance": 10,
+            "pinLocations": [
+                { "x": 0, "y": 0 },
+                { "x": 10, "y": 0 },
+                { "x": 20, "y": 0 }
+            ]
+        },
+        "numberOfPins": 3,
+        "pinDefinitions": [
+            {
+                "target": { "pinInstantiationIdx": 0 },
+                "style": "croc",
+                "orientation": "+Z"
+            },
+            {
+                "target": "threeVolt",
+                "style": "croc",
+                "orientation": "+Z"
+            },
+            {
+                "target": "ground",
+                "style": "croc",
+                "orientation": "+Z"
+            }
+        ],
+        "instantiation": {
+            "kind": "function",
+            "fullyQualifiedName": "robot.showServos",
+            "argumentRoles": [
+                { "pinInstantiationIdx": 0, "partParameter": "name" },
+                {}
+            ]
+        },
+        "assembly": [
+            { "part": true, "pinIndices": [0] },
+            { "pinIndices": [1, 2] }
+        ]
+    },
+    "robotservo3": {
+        "simulationBehavior": "microservo",
+        "visual": {
+            "builtIn": "microservo",
+            "width": 74.85,
+            "height": 200,
+            "pinDistance": 10,
+            "pinLocations": [
+                { "x": 0, "y": 0 },
+                { "x": 10, "y": 0 },
+                { "x": 20, "y": 0 }
+            ]
+        },
+        "numberOfPins": 3,
+        "pinDefinitions": [
+            {
+                "target": { "pinInstantiationIdx": 0 },
+                "style": "croc",
+                "orientation": "+Z"
+            },
+            {
+                "target": "threeVolt",
+                "style": "croc",
+                "orientation": "+Z"
+            },
+            {
+                "target": "ground",
+                "style": "croc",
+                "orientation": "+Z"
+            }
+        ],
+        "instantiation": {
+            "kind": "function",
+            "fullyQualifiedName": "robot.showServos",
+            "argumentRoles": [
+                {},
+                { "pinInstantiationIdx": 0, "partParameter": "name" }
+            ]
+        },
+        "assembly": [
+            { "part": true, "pinIndices": [0] },
+            { "pinIndices": [1, 2] }
+        ]
     }
 }

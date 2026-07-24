@@ -31,5 +31,7 @@
     "{id:group}Arms": "Arme",
     "{id:group}Colors": "Farben",
     "{id:group}Expressions": "Ausdrücke",
-    "{id:group}Setup": "Einstellungen"
+    "{id:group}Setup": "Einstellungen",
+    "robot.showServos|block": "Servos im Simulator anzeigen auf servo2 %servo2pin servo3 %servo3pin",
+    "robot.onRadioReceived|block": "wenn Roboter-Radio empfängt $servonaam $waarde"
 }

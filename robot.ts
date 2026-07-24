@@ -60,7 +60,7 @@ enum KnobPin {
 }
 
 //% color=#2699BF icon="\uf110" block="Robot"
-//% groups='["Setup", "Colors", "Expressions", "Arms"]'
+//% groups='["Setup", "Colors", "Expressions", "Arms", "Radio"]'
 namespace robot {
 
     let LED_PIN: DigitalPin = DigitalPin.P8;
@@ -75,6 +75,8 @@ namespace robot {
     let servoMaxHoek2: number = 180;
     let servoMinHoek3: number = 0;
     let servoMaxHoek3: number = 180;
+    let servoPin2: AnalogPin = AnalogPin.P15;
+    let servoPin3: AnalogPin = AnalogPin.P16;
 
     // Parts of the face, expressed as ranges on the LED strip.
     let tinkywinki: neopixel.Strip;
@@ -167,7 +169,7 @@ namespace robot {
     //% color.shadow="colorNumberPicker"
     //% weight=70
     //% group="Expressions"
-    //% parts="robotface microservo"
+    //% parts="robotface"
     export function showExpression(expression: RobotExpression, color: number): void {
         initGezicht();
         gezicht.clear();
@@ -221,7 +223,6 @@ namespace robot {
     //% on.shadow="toggleOnOff" on.defl=true
     //% weight=64
     //% group="Expressions"
-    //% parts="microservo"
     export function mirrorToArms(on: boolean): void {
         spiegelNaarArmen = on;
     }
@@ -233,7 +234,6 @@ namespace robot {
      */
     //% blockId="robot_turn_servo_position"
     //% block="turn %servo to position %position"
-    //% parts="microservo"
     //% weight=60
     //% group="Arms"
     export function turnServoToPosition(servo: RobotServo, position: ArmPosition): void {
@@ -260,7 +260,6 @@ namespace robot {
     //% blockId="robot_turn_servo_value"
     //% block="turn %servo to value %value"
     //% value.min=0 value.max=180 value.defl=90
-    //% parts="microservo"
     //% weight=58
     //% group="Arms"
     export function turnServoToValue(servo: RobotServo, value: number): void {
@@ -274,7 +273,6 @@ namespace robot {
      */
     //% blockId="robot_turn_servo_knob"
     //% block="turn %servo with knob connected to %knob"
-    //% parts="microservo"
     //% weight=55
     //% group="Arms"
     export function turnServoWithKnob(servo: RobotServo, knob: KnobPin): void {
@@ -341,6 +339,43 @@ namespace robot {
         }
     }
 
+    /**
+     * Show the servos in the simulator and set their pins. Place this block
+     * once (for example inside "on start") so the arm servo (servo2) and the
+     * dashboard servo (servo3) appear and move in the micro:bit simulator.
+     * @param servo2pin the pin for servo2 (arms), eg: AnalogPin.P15
+     * @param servo3pin the pin for servo3 (dashboard), eg: AnalogPin.P16
+     */
+    //% blockId="robot_show_servos"
+    //% block="show servos in simulator on servo2 %servo2pin servo3 %servo3pin"
+    //% servo2pin.defl=AnalogPin.P15
+    //% servo3pin.defl=AnalogPin.P16
+    //% weight=48
+    //% group="Arms"
+    //% parts="robotservo2 robotservo3" trackArgs=0,1
+    export function showServos(servo2pin: AnalogPin, servo3pin: AnalogPin): void {
+        servoPin2 = servo2pin;
+        servoPin3 = servo3pin;
+    }
+
+    /**
+     * Run code when the robot receives a name and value over radio. The
+     * received name is translated to a servo (servo2 or servo3) so it can be
+     * passed straight into "turn servo to value".
+     * @param handler code to run with the servo and the received value
+     */
+    //% blockId="robot_on_radio_received"
+    //% block="when robot radio receives $servonaam $waarde"
+    //% draggableParameters="reporter"
+    //% weight=42
+    //% group="Radio"
+    export function onRadioReceived(handler: (servonaam: RobotServo, waarde: number) => void): void {
+        radio.onReceivedValue(function (name: string, value: number) {
+            let servo = name == "servo3" ? RobotServo.Servo3 : RobotServo.Servo2;
+            handler(servo, value);
+        });
+    }
+
     function zetServo(servo: RobotServo, degrees: number): void {
         let inverted = servo == RobotServo.Servo3
             ? omkeerServo3
@@ -352,12 +387,11 @@ namespace robot {
         } else {
             degrees = Math.clamp(servoMinHoek2, servoMaxHoek2, degrees);
         }
-        // Drive the servo pin directly with a literal pin so the micro:bit
-        // simulator can detect and display the servo (servo2 = P15, servo3 = P16).
+        // Drive the configured servo pin (servo2 = P15, servo3 = P16 by default).
         if (servo == RobotServo.Servo3) {
-            pins.servoWritePin(AnalogPin.P16, degrees);
+            pins.servoWritePin(servoPin3, degrees);
         } else {
-            pins.servoWritePin(AnalogPin.P15, degrees);
+            pins.servoWritePin(servoPin2, degrees);
         }
     }
 
