@@ -4,6 +4,8 @@ robot.setBrightness(60)
 robot.mirrorToScreen(true)
 
 basic.forever(function () {
+    robot.turnServoToPosition(RobotServo.Servo2, ArmPosition.High)
+    basic.pause(500)
     robot.setColor(RobotPart.Eyes, NeoPixelColors.Red)
     basic.pause(500)
     robot.clear(RobotPart.Eyes)

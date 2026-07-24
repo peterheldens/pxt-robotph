@@ -167,7 +167,7 @@ namespace robot {
     //% color.shadow="colorNumberPicker"
     //% weight=70
     //% group="Expressions"
-    //% parts="robotface robotservo2"
+    //% parts="robotface microservo"
     export function showExpression(expression: RobotExpression, color: number): void {
         initGezicht();
         gezicht.clear();
@@ -221,7 +221,7 @@ namespace robot {
     //% on.shadow="toggleOnOff" on.defl=true
     //% weight=64
     //% group="Expressions"
-    //% parts="robotservo2"
+    //% parts="microservo"
     export function mirrorToArms(on: boolean): void {
         spiegelNaarArmen = on;
     }
@@ -233,7 +233,7 @@ namespace robot {
      */
     //% blockId="robot_turn_servo_position"
     //% block="turn %servo to position %position"
-    //% parts="robotservo2 robotservo3"
+    //% parts="microservo"
     //% weight=60
     //% group="Arms"
     export function turnServoToPosition(servo: RobotServo, position: ArmPosition): void {
@@ -249,10 +249,7 @@ namespace robot {
                 degrees = 0;
                 break;
         }
-        let servoChoice = servo == RobotServo.Servo3
-            ? kitronik_simple_servo.ServoChoice.servo3
-            : kitronik_simple_servo.ServoChoice.servo2;
-        zetServo(servoChoice, degrees);
+        zetServo(servo, degrees);
     }
 
     /**
@@ -262,7 +259,7 @@ namespace robot {
      */
     //% blockId="robot_turn_servo_knob"
     //% block="turn %servo with knob connected to %knob"
-    //% parts="robotservo2 robotservo3"
+    //% parts="microservo"
     //% weight=55
     //% group="Arms"
     export function turnServoWithKnob(servo: RobotServo, knob: KnobPin): void {
@@ -280,10 +277,7 @@ namespace robot {
         }
         let value = pins.analogReadPin(analogPin);
         let degrees = Math.round(Math.clamp(0, 180, Math.map(value, 0, 1023, 0, 180)));
-        let servoChoice = servo == RobotServo.Servo3
-            ? kitronik_simple_servo.ServoChoice.servo3
-            : kitronik_simple_servo.ServoChoice.servo2;
-        zetServo(servoChoice, degrees);
+        zetServo(servo, degrees);
     }
 
     /**
@@ -332,20 +326,20 @@ namespace robot {
         }
     }
 
-    function zetServo(servoChoice: kitronik_simple_servo.ServoChoice, degrees: number): void {
-        let inverted = servoChoice == kitronik_simple_servo.ServoChoice.servo3
+    function zetServo(servo: RobotServo, degrees: number): void {
+        let inverted = servo == RobotServo.Servo3
             ? omkeerServo3
             : omkeerServo2;
         if (inverted) degrees = 180 - degrees;
         // Keep the servo within its configured range.
-        if (servoChoice == kitronik_simple_servo.ServoChoice.servo3) {
+        if (servo == RobotServo.Servo3) {
             degrees = Math.clamp(servoMinHoek3, servoMaxHoek3, degrees);
         } else {
             degrees = Math.clamp(servoMinHoek2, servoMaxHoek2, degrees);
         }
         // Drive the servo pin directly with a literal pin so the micro:bit
         // simulator can detect and display the servo (servo2 = P15, servo3 = P16).
-        if (servoChoice == kitronik_simple_servo.ServoChoice.servo3) {
+        if (servo == RobotServo.Servo3) {
             pins.servoWritePin(AnalogPin.P16, degrees);
         } else {
             pins.servoWritePin(AnalogPin.P15, degrees);
@@ -373,7 +367,7 @@ namespace robot {
                 degrees = 20;
                 break;
         }
-        zetServo(kitronik_simple_servo.ServoChoice.servo2, degrees);
+        zetServo(RobotServo.Servo2, degrees);
     }
 
     function tekenOpScherm(expression: RobotExpression): void {
