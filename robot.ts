@@ -167,7 +167,7 @@ namespace robot {
     //% color.shadow="colorNumberPicker"
     //% weight=70
     //% group="Expressions"
-    //% parts="robotface"
+    //% parts="robotface microservo"
     export function showExpression(expression: RobotExpression, color: number): void {
         initGezicht();
         gezicht.clear();
@@ -221,6 +221,7 @@ namespace robot {
     //% on.shadow="toggleOnOff" on.defl=true
     //% weight=64
     //% group="Expressions"
+    //% parts="microservo"
     export function mirrorToArms(on: boolean): void {
         spiegelNaarArmen = on;
     }
