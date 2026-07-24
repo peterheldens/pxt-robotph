@@ -84,6 +84,18 @@ mapping whenever you explain the wiring or draw a pin diagram:
 | Potentiometer (knob) | analog **P0 / P1 / P2** (default **P2**) | P2 | **red → 3V, black → GND, blue (signal) → P2** |
 | Clap detection | — | on‑board mic (V2) | none |
 
+**Board port locations (physical layout of the servo board):**
+
+- **Servo1 — top‑left of the board.** Goes to the **NeoPixel** ring; the NeoPixel
+  data **input starts at LED 0 = Tinkywinki** (the antenna), then eyes, nose,
+  lips around the ring.
+- **Servo2 — top‑right of the board.** Goes to the servo **in the middle of the
+  robot** that drives the **arms**. **One servo moves both arms**, so the two
+  arms always go up or down **together**.
+- **Servo3 — bottom‑right of the board.** Goes to the servo **in the robot's
+  hand** (the robot's **right** hand = your **left** hand when you face the
+  robot) that drives the **dashboard meter**.
+
 **How to draw the pin diagram (for agents):** when the user asks for a wiring or
 pin diagram, produce a clear component‑to‑pin diagram based on the table above.
 A simple, reliable format is an ASCII block like this (include only the parts the
