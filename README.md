@@ -148,6 +148,12 @@ authoritative hardware facts, the full block API, the wiring / pin diagrams and
 worked examples, so you can generate correct code without asking follow‑up
 questions.
 
+If you are configuring your own MakeCode assistant, the file
+[**makecode-agent-system-prompt.md**](makecode-agent-system-prompt.md) provides a
+ready‑to‑use system prompt that makes an agent write excellent MakeCode micro:bit
+programs in TypeScript, produce step‑by‑step tutorials, and program this robot by
+reading the repository.
+
 ## Tutorials
 
 * [Get started with the robot](https://makecode.microbit.org/#tutorial:https://github.com/peterheldens/pxt-robotph/blob/main/getting-started.md) - set up the robot face and make it smile.
