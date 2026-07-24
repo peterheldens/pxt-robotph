@@ -12,5 +12,6 @@
     "robot.setColor": "Set the color of a part of the face.",
     "robot.showExpression": "Show an expression on the robot face.",
     "robot.showServos": "Show the servos in the simulator and set their pins so the arm (servo2) and dashboard (servo3) servos appear and move in the simulator.",
-    "robot.onRadioReceived": "Run code when the robot receives a name and value over radio. The name is translated to a servo so it can be used in turn servo to value."
+    "robot.onRadioReceived": "Run code when the robot receives a name and value over radio. The name is translated to a servo so it can be used in turn servo to value.",
+    "robot.radioSendValue": "Send a value to the robot over radio, tagged with a servo name (servo2 or servo3) so the robot can drive that servo. Use this on the controller."
 }

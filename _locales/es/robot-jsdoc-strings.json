@@ -12,5 +12,6 @@
     "robot.setColor": "Colorea una parte de la cara.",
     "robot.showExpression": "Muestra una expresión en la cara del robot.",
     "robot.showServos": "Muestra los servos en el simulador y define sus pines para que los servos del brazo (servo2) y del panel (servo3) aparezcan y se muevan en el simulador.",
-    "robot.onRadioReceived": "Ejecuta código cuando el robot recibe un nombre y un valor por radio. El nombre se traduce a un servo."
+    "robot.onRadioReceived": "Ejecuta código cuando el robot recibe un nombre y un valor por radio. El nombre se traduce a un servo.",
+    "robot.radioSendValue": "Envía un valor al robot por radio, con un nombre de servo (servo2 o servo3) para que el robot pueda mover ese servo. Úsalo en el controlador."
 }

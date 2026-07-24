@@ -8,6 +8,10 @@ robot.onRadioReceived(function (naam, waarde) {
     robot.turnServoToValue(naam, waarde)
 })
 
+input.onButtonPressed(Button.A, function () {
+    robot.radioSendValue(RobotServo.Servo2, 90)
+})
+
 basic.forever(function () {
     robot.turnServoToPosition(RobotServo.Servo2, ArmPosition.High)
     basic.pause(500)

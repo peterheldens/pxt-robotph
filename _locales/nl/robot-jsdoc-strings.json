@@ -12,5 +12,6 @@
     "robot.setColor": "Geef een onderdeel van het gezicht een kleur.",
     "robot.showExpression": "Toon een expressie op het robotgezicht.",
     "robot.showServos": "Toon de servo's in de simulator en stel hun pinnen in zodat de arm- (servo2) en dashboardservo (servo3) verschijnen en bewegen in de simulator.",
-    "robot.onRadioReceived": "Voer code uit wanneer de robot een naam en waarde via radio ontvangt. De naam wordt vertaald naar een servo zodat je hem in draai servo naar waarde kunt gebruiken."
+    "robot.onRadioReceived": "Voer code uit wanneer de robot een naam en waarde via radio ontvangt. De naam wordt vertaald naar een servo zodat je hem in draai servo naar waarde kunt gebruiken.",
+    "robot.radioSendValue": "Verzend een waarde via radio naar de robot, met een servonaam (servo2 of servo3) zodat de robot die servo kan aansturen. Gebruik dit op de controller."
 }

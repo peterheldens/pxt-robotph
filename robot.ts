@@ -376,6 +376,20 @@ namespace robot {
         });
     }
 
+    /**
+     * Send a value to the robot over radio, tagged with a servo name (servo2
+     * or servo3) so the robot can drive that servo. Use this on the controller.
+     * @param naam the servo to target: servo2 or servo3
+     * @param waarde the value to send, for example a servo angle (0-180)
+     */
+    //% blockId="robot_radio_send_value"
+    //% block="robot radio send value %naam = %waarde"
+    //% weight=40
+    //% group="Radio"
+    export function radioSendValue(naam: RobotServo, waarde: number): void {
+        radio.sendValue(naam == RobotServo.Servo3 ? "servo3" : "servo2", waarde);
+    }
+
     function zetServo(servo: RobotServo, degrees: number): void {
         let inverted = servo == RobotServo.Servo3
             ? omkeerServo3

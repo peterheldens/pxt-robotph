@@ -12,5 +12,6 @@
     "robot.setColor": "Färbe einen Teil des Gesichts.",
     "robot.showExpression": "Zeige einen Ausdruck auf dem Robotergesicht.",
     "robot.showServos": "Zeigt die Servos im Simulator an und legt ihre Pins fest, damit der Arm- (servo2) und Dashboard-Servo (servo3) im Simulator erscheinen und sich bewegen.",
-    "robot.onRadioReceived": "Führt Code aus, wenn der Roboter einen Namen und Wert über Funk empfängt. Der Name wird in einen Servo übersetzt."
+    "robot.onRadioReceived": "Führt Code aus, wenn der Roboter einen Namen und Wert über Funk empfängt. Der Name wird in einen Servo übersetzt.",
+    "robot.radioSendValue": "Sendet einen Wert per Funk an den Roboter, versehen mit einem Servonamen (servo2 oder servo3), damit der Roboter diesen Servo ansteuern kann. Auf dem Controller verwenden."
 }
