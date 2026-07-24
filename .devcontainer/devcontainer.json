@@ -1,0 +1,19 @@
+{
+    "name": "pxt-robotph (MakeCode micro:bit)",
+    "image": "mcr.microsoft.com/devcontainers/typescript-node:22",
+    "postCreateCommand": "npm install -g makecode && makecode install && makecode build -j",
+    "forwardPorts": [7001],
+    "portsAttributes": {
+        "7001": {
+            "label": "MakeCode simulator (makecode serve)",
+            "onAutoForward": "notify"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.vscode-typescript-next"
+            ]
+        }
+    }
+}

@@ -385,6 +385,9 @@ Exit code `0` means the program type‑checks; otherwise fix the reported
 `robot.*` call compiles. This is the surest guard against a hallucinated API or a
 wrong signature — always prefer a real build over "it looks right".
 
+For the full local setup (watch mode, the `makecode serve` simulator, flashing to
+a device, the dev container and CI), see [`CONTRIBUTING.md`](CONTRIBUTING.md).
+
 **Simulator vs. real hardware.** Tell the user to test in the MakeCode simulator
 first, then on a real **micro:bit V2**:
 

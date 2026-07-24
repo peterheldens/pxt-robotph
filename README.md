@@ -159,6 +159,13 @@ others), the folder [**skills/makecode-microbit-robot**](skills/makecode-microbi
 packages this knowledge as an importable skill. See its
 [README](skills/makecode-microbit-robot/README.md) for install instructions.
 
+## Development
+
+Want to build or test this extension locally instead of in the online editor?
+See [**CONTRIBUTING.md**](CONTRIBUTING.md) — it covers the `makecode` CLI
+(build, watch, the local simulator via `makecode serve`, and flashing to a
+micro:bit), the dev container, and CI.
+
 ## Tutorials
 
 * [Get started with the robot](https://makecode.microbit.org/#tutorial:https://github.com/peterheldens/pxt-robotph/blob/main/getting-started.md) - set up the robot face and make it smile.

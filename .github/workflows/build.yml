@@ -1,0 +1,31 @@
+name: MakeCode build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Cache MakeCode editor
+        uses: actions/cache@v4
+        with:
+          path: ~/.makecode
+          key: makecode-${{ runner.os }}
+
+      - name: Install MakeCode CLI
+        run: npm install -g makecode
+
+      - name: Type-check the extension (JavaScript build)
+        run: makecode build -j
