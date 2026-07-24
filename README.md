@@ -17,7 +17,9 @@ Hardware overview:
 * An **analog servo gauge** (meter).
 * **NeoPixels** for the **antenna**, **eyes**, **nose**, **mouth** and **lips**.
 * A **push button** and a **vibrating spiral**.
-* Everything is wired through the **Kitronik servo board**.
+* Everything is wired through a **servo board** (for example Kitronik). The
+  extension drives the servo pins directly, so no extra servo-board extension is
+  needed.
 
 The robot also has a **remote controller**. Children in the classroom can plug
 their own project, running on their own micro:bit, into the robot blackboard and
@@ -62,14 +64,16 @@ want to see the strip in the simulator. On real hardware any pin works.
 
 * micro:bit
 * NeoPixel ring with 16 LEDs, data pin defaults to **P8**
-* Kitronik servo board with three servo outputs
+* A servo board (for example Kitronik) with three servo outputs: **Servo1 → P8** (NeoPixel face), **Servo2 → P15** (arms) and **Servo3 → P16** (dashboard / analog meter)
 
 ## ~ hint
 
-**Wiring:** the extension uses the servo board.
+**Wiring:**
 * Connect the **NeoPixel** face to **Servo1** on the servo board, because Servo1 is wired to pin **P8** (the default data pin).
-* The **arm** is driven by **Servo2** (pin P15).
-* The knob (potentiometer) for ``||robot.turnServoWithKnob||`` is read from an analog pin (P0, P1 or P2).
+* The **arms** are driven by **Servo2** (pin **P15**).
+* The **dashboard / analog meter** is driven by **Servo3** (pin **P16**).
+* A knob (potentiometer) for ``||robot.turnServoWithKnob||`` is read from an analog pin (**P0**, **P1** or **P2**). You can use this to drive the meter live, for example a knob on P0 moving the dashboard meter on servo3.
+* The extension drives the servo pins directly, so no separate servo-board extension is needed. Use ``||robot.showServos||`` if you also want the servos to appear in the simulator.
 
 ## ~
 
@@ -90,15 +94,46 @@ The LED layout of the face (index in the ring):
 
 * ``||robot.initialize||`` - set the data pin and number of LEDs.
 * ``||robot.setBrightness||`` - brightness from 0 to 255.
+* ``||robot.showServos||`` - make servo2 and servo3 appear and move in the simulator, and set their pins (default servo2 = P15, servo3 = P16).
 * ``||robot.setColor||`` - color a part (eyes, left eye, right eye, nose, lips, upper lip, lower lip, tinkywinki or the whole face).
 * ``||robot.clear||`` - turn a part off.
 * ``||robot.showExpression||`` - show an expression (happy, angry, sad, surprised). The arms (servo2) also move to match: happy up, surprised high, angry straight out, sad down.
 * ``||robot.mirrorToScreen||`` - pass the expression through to the 5x5 LED screen.
 * ``||robot.mirrorToArms||`` - pass the expression through to the arms (servo2), on by default.
 * ``||robot.turnServoToPosition||`` - turn servo2 or servo3 to a position (high, middle or low).
-* ``||robot.turnServoWithKnob||`` - turn servo2 or servo3 with a knob (potentiometer) connected to analog pin P0, P1 or P2.
+* ``||robot.turnServoToValue||`` - turn servo2 or servo3 to an angle from 0 to 180 degrees.
+* ``||robot.turnServoWithKnob||`` - turn servo2 or servo3 with a knob (potentiometer) connected to analog pin P0, P1 or P2. Use servo3 to drive the dashboard meter live.
 * ``||robot.reverseServo||`` - reverse the turning direction of servo2 or servo3 (an angle of 180 becomes 0, 30 becomes 150, and so on).
 * ``||robot.limitServoRange||`` - limit the range of servo2 or servo3 to a fixed start and end angle (for example from 10 to 170), so that servo can only move within that range.
+* ``||robot.radioSendValue||`` - send a value to the robot over radio, tagged with servo2 or servo3 (use this on the remote controller).
+* ``||robot.onRadioReceived||`` - run code when the robot receives a name and value over radio; the received name is translated to servo2 or servo3 so it can be dropped straight into a servo block.
+
+## Servos and radio
+
+Show the servos in the simulator and turn an arm to a specific angle:
+
+```blocks
+robot.initialize(DigitalPin.P8, 16)
+robot.showServos(AnalogPin.P15, AnalogPin.P16)
+robot.turnServoToValue(RobotServo.Servo2, 90)
+```
+
+On the **robot**, react to values sent over radio. The received name is
+translated to servo2 or servo3, so you can drop it straight into a servo block:
+
+```blocks
+robot.onRadioReceived(function (naam, waarde) {
+    robot.turnServoToValue(naam, waarde)
+})
+```
+
+On the **remote controller**, send a value tagged with a servo:
+
+```blocks
+input.onButtonPressed(Button.A, function () {
+    robot.radioSendValue(RobotServo.Servo2, 180)
+})
+```
 
 ## Tutorials
 
