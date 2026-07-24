@@ -365,7 +365,7 @@ namespace robot {
      * @param handler code to run with the servo and the received value
      */
     //% blockId="robot_on_radio_received"
-    //% block="when robot radio receives $naam $waarde"
+    //% block="when robot radio receives from controller $naam $waarde"
     //% draggableParameters="reporter"
     //% weight=42
     //% group="Radio"
