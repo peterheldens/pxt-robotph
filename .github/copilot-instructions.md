@@ -44,6 +44,9 @@ If you change any of these in `robot.ts`, update `AGENTS.md`, `README.md`, and
 ## Build, test and release
 
 - Build/compile check: **`npx makecode`** (expect `Build OK`).
+- Fast type-check loop: **`npx makecode build -j`** (JavaScript mode, no ARM
+  native) — use this to quickly validate generated/edited TypeScript. Exit code 0
+  means it type-checks; `test.ts` (in `testFiles`) is a handy scratch target.
 - A **code change** (`robot.ts`) requires a **version bump in `pxt.json`** and a
   matching GitHub release/tag `vX.Y.Z`.
 - **Docs‑only changes** (`AGENTS.md`, `makecode-agent-system-prompt.md`,

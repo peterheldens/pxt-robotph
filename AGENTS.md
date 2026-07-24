@@ -370,6 +370,46 @@ input.onButtonPressed(Button.B, function () {
 
 ---
 
+## 11. Validate the generated code (and the simulator gap)
+
+**Compile‑check before trusting code.** This repository builds headlessly with the
+MakeCode CLI. From the repo root:
+
+```bash
+npx makecode build -j     # JavaScript mode = fast full type‑check, no ARM native
+```
+
+Exit code `0` means the program type‑checks; otherwise fix the reported
+`file.ts(line,col): ERROR …` and rebuild. `test.ts` is already in `pxt.json`'s
+`testFiles`, so an agent can drop candidate code there and build to verify every
+`robot.*` call compiles. This is the surest guard against a hallucinated API or a
+wrong signature — always prefer a real build over "it looks right".
+
+**Simulator vs. real hardware.** Tell the user to test in the MakeCode simulator
+first, then on a real **micro:bit V2**:
+
+- Keep the NeoPixels on **P8** — the simulator does **not** render NeoPixels
+  correctly on P10–P16 (see §7).
+- The microphone/clap (`input.onSound`) only works on **V2** hardware.
+- The simulator does not reproduce servo backlash, sensor noise, or exact timing.
+
+---
+
+## 12. Sync contract (keep agent docs and code consistent)
+
+These files share facts and must be updated together:
+
+- When **`robot.ts`** changes (new/changed blocks, pins, enums) → update this
+  file's §2 (facts/pin map) and §4 (block API), `README.md`,
+  `makecode-agent-system-prompt.md` §5–6, and bump the version in `pxt.json`.
+- When **this file** changes → verify the "Hard facts" in
+  `.github/copilot-instructions.md` still match.
+- Never change the pin map without also updating the ASCII diagram in §2.1.
+
+---
+
 *This file documents the public API and hardware of the `robot` extension in this
 repository. When the extension changes (new blocks, changed pins), update this
 file so agents keep generating correct code.*
+<!-- last verified: 2026-07-24, pxt.json v1.0.53 -->
+
