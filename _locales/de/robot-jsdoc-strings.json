@@ -4,6 +4,7 @@
     "robot.mirrorToScreen": "Zeige den Ausdruck auch auf dem 5x5 LED-Bildschirm des micro:bit.",
     "robot.mirrorToArms": "Bewege die Arme (servo2) passend zum Ausdruck.",
     "robot.turnServoToPosition": "Drehe einen Servo zu einer Position (hoch, mittel oder niedrig).",
+    "robot.turnServoToValue": "Drehe einen Servo zu einem Wert (Winkel) zwischen 0 und 180 Grad.",
     "robot.turnServoWithKnob": "Drehe einen Servo auf einen Winkel (0-180) anhand eines Drehknopfs (Potentiometer) an einem Analogpin.",
     "robot.reverseServo": "Kehre die Drehrichtung eines Servos um. Wenn aktiv, wird aus 180 nun 0, aus 0 wird 180, aus 30 wird 150 und so weiter.",
     "robot.limitServoRange": "Begrenze den Bereich eines Servos, sodass er sich nur zwischen einer festen Start- und Endposition bewegen kann. Der Start muss kleiner als das Ende sein.",

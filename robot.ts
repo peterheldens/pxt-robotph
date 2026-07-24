@@ -253,6 +253,21 @@ namespace robot {
     }
 
     /**
+     * Turn a servo to a value (angle) between 0 and 180 degrees.
+     * @param servo the servo to drive: servo2 or servo3
+     * @param value the angle in degrees, from 0 to 180
+     */
+    //% blockId="robot_turn_servo_value"
+    //% block="turn %servo to value %value"
+    //% value.min=0 value.max=180 value.defl=90
+    //% parts="microservo"
+    //% weight=58
+    //% group="Arms"
+    export function turnServoToValue(servo: RobotServo, value: number): void {
+        zetServo(servo, Math.clamp(0, 180, value));
+    }
+
+    /**
      * Turn a servo to an angle (0-180) from a knob (potentiometer) connected to an analog pin.
      * @param servo the servo to drive: servo2 or servo3
      * @param knob the analog pin the knob is connected to

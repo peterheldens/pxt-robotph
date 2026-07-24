@@ -4,6 +4,7 @@
     "robot.mirrorToScreen": "Muestra también la expresión en la pantalla LED 5x5 del micro:bit.",
     "robot.mirrorToArms": "Mueve también los brazos (servo2) según la expresión.",
     "robot.turnServoToPosition": "Gira un servo a una posición (alto, medio o bajo).",
+    "robot.turnServoToValue": "Gira un servo a un valor (ángulo) entre 0 y 180 grados.",
     "robot.turnServoWithKnob": "Gira un servo a un ángulo (0-180) según un potenciómetro conectado a un pin analógico.",
     "robot.reverseServo": "Invierte el sentido de giro de un servo. Si está activado, un ángulo de 180 pasa a 0, 0 pasa a 180, 30 pasa a 150, etc.",
     "robot.limitServoRange": "Limita el rango de un servo para que solo pueda moverse entre una posición de inicio y de fin fijas. El inicio debe ser menor que el fin.",

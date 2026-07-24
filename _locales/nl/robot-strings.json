@@ -20,6 +20,7 @@
     "robot.mirrorToScreen|block": "zet expressie door naar scherm %on",
     "robot.mirrorToArms|block": "zet expressie door naar armen %on",
     "robot.turnServoToPosition|block": "draai %servo naar positie %position",
+    "robot.turnServoToValue|block": "draai %servo naar waarde %value",
     "robot.turnServoWithKnob|block": "draai %servo met draaiknop verbonden aan %knob",
     "robot.reverseServo|block": "draai richting om van %servo %on",
     "robot.limitServoRange|block": "beperk range van %servo van %start tot %end",

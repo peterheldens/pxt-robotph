@@ -20,6 +20,7 @@
     "robot.mirrorToScreen|block": "Ausdruck an Bildschirm weitergeben %on",
     "robot.mirrorToArms|block": "Ausdruck an Arme weitergeben %on",
     "robot.turnServoToPosition|block": "drehe %servo zu Position %position",
+    "robot.turnServoToValue|block": "drehe %servo zu Wert %value",
     "robot.turnServoWithKnob|block": "drehe %servo mit Drehknopf an %knob",
     "robot.reverseServo|block": "Drehrichtung umkehren von %servo %on",
     "robot.limitServoRange|block": "Bereich von %servo begrenzen von %start bis %end",

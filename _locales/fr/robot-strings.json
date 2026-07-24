@@ -20,6 +20,7 @@
     "robot.mirrorToScreen|block": "transmettre l'expression à l'écran %on",
     "robot.mirrorToArms|block": "transmettre l'expression aux bras %on",
     "robot.turnServoToPosition|block": "tourner %servo vers la position %position",
+    "robot.turnServoToValue|block": "tourner %servo vers la valeur %value",
     "robot.turnServoWithKnob|block": "tourner %servo avec le potentiomètre connecté à %knob",
     "robot.reverseServo|block": "inverser le sens de %servo %on",
     "robot.limitServoRange|block": "limiter la plage de %servo de %start à %end",

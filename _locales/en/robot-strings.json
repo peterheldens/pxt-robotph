@@ -20,6 +20,7 @@
     "robot.mirrorToScreen|block": "pass expression through to screen %on",
     "robot.mirrorToArms|block": "pass expression through to arms %on",
     "robot.turnServoToPosition|block": "turn %servo to position %position",
+    "robot.turnServoToValue|block": "turn %servo to value %value",
     "robot.turnServoWithKnob|block": "turn %servo with knob connected to %knob",
     "robot.reverseServo|block": "reverse direction of %servo %on",
     "robot.limitServoRange|block": "limit range of %servo from %start to %end",
