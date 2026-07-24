@@ -12,6 +12,13 @@ input.onButtonPressed(Button.A, function () {
     robot.radioSendValue(RobotServo.Servo2, 90)
 })
 
+input.onButtonPressed(Button.B, function () {
+    robot.limitServoRange(RobotServo.Servo3, 10, 170)
+    robot.reverseServo(RobotServo.Servo3, true)
+    robot.turnServoToValue(RobotServo.Servo3, 120)
+    robot.turnServoWithKnob(RobotServo.Servo3, KnobPin.P0)
+})
+
 basic.forever(function () {
     robot.turnServoToPosition(RobotServo.Servo2, ArmPosition.High)
     basic.pause(500)
