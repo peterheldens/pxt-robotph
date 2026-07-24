@@ -350,8 +350,8 @@ namespace robot {
     //% block="show servos in simulator on servo2 %servo2pin servo3 %servo3pin"
     //% servo2pin.defl=AnalogPin.P15
     //% servo3pin.defl=AnalogPin.P16
-    //% weight=48
-    //% group="Arms"
+    //% weight=90
+    //% group="Setup"
     //% parts="robotservo2 robotservo3" trackArgs=0,1
     export function showServos(servo2pin: AnalogPin, servo3pin: AnalogPin): void {
         servoPin2 = servo2pin;
