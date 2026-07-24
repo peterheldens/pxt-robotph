@@ -228,12 +228,26 @@ namespace robot {
     }
 
     /**
+     * A servo (servo2 or servo3) as a value, so it can be stored in a
+     * variable or dropped into servo blocks.
+     * @param servo the servo: servo2 or servo3
+     */
+    //% shim=TD_ID
+    //% blockId=robotServoField
+    //% block="%servo"
+    //% blockHidden=true
+    export function servoValue(servo: RobotServo): RobotServo {
+        return servo;
+    }
+
+    /**
      * Turn a servo to a position (high, middle or low).
      * @param servo the servo to drive: servo2 or servo3
      * @param position the position: high, middle or low
      */
     //% blockId="robot_turn_servo_position"
     //% block="turn %servo to position %position"
+    //% servo.shadow=robotServoField
     //% weight=60
     //% group="Arms"
     export function turnServoToPosition(servo: RobotServo, position: ArmPosition): void {
@@ -259,6 +273,7 @@ namespace robot {
      */
     //% blockId="robot_turn_servo_value"
     //% block="turn %servo to value %value"
+    //% servo.shadow=robotServoField
     //% value.min=0 value.max=180 value.defl=90
     //% weight=58
     //% group="Arms"
@@ -273,6 +288,7 @@ namespace robot {
      */
     //% blockId="robot_turn_servo_knob"
     //% block="turn %servo with knob connected to %knob"
+    //% servo.shadow=robotServoField
     //% weight=55
     //% group="Arms"
     export function turnServoWithKnob(servo: RobotServo, knob: KnobPin): void {
@@ -301,6 +317,7 @@ namespace robot {
      */
     //% blockId="robot_reverse_servo"
     //% block="reverse direction of %servo %on"
+    //% servo.shadow=robotServoField
     //% on.shadow="toggleOnOff" on.defl=true
     //% weight=50
     //% group="Arms"
@@ -321,6 +338,7 @@ namespace robot {
      */
     //% blockId="robot_limit_servo_range"
     //% block="limit range of %servo from %start to %end"
+    //% servo.shadow=robotServoField
     //% start.min=0 start.max=180 start.defl=0
     //% end.min=0 end.max=180 end.defl=180
     //% weight=45
@@ -384,6 +402,7 @@ namespace robot {
      */
     //% blockId="robot_radio_send_value"
     //% block="robot radio send value %naam = %waarde"
+    //% naam.shadow=robotServoField
     //% weight=40
     //% group="Radio"
     export function radioSendValue(naam: RobotServo, waarde: number): void {
