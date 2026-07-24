@@ -154,6 +154,11 @@ ready‑to‑use system prompt that makes an agent write excellent MakeCode micr
 programs in TypeScript, produce step‑by‑step tutorials, and program this robot by
 reading the repository.
 
+For agents that support **Agent Skills** (Microsoft Scout CLI, GitHub Copilot and
+others), the folder [**skills/makecode-microbit-robot**](skills/makecode-microbit-robot/)
+packages this knowledge as an importable skill. See its
+[README](skills/makecode-microbit-robot/README.md) for install instructions.
+
 ## Tutorials
 
 * [Get started with the robot](https://makecode.microbit.org/#tutorial:https://github.com/peterheldens/pxt-robotph/blob/main/getting-started.md) - set up the robot face and make it smile.
