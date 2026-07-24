@@ -1,7 +1,7 @@
    {
        "name": "robot",
        "description": "An extension to control a robot face made of NeoPixels.",
-       "version": "1.0.48",
+       "version": "1.0.49",
        "license": "MIT",
        "dependencies": {
            "core": "*",

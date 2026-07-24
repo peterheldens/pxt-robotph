@@ -1,8 +1,13 @@
 # Robot face
 
-A MakeCode extension for the micro:bit to control a robot face made of a
-NeoPixel ring (16 LEDs by default). The blocks are localized and follow the
-editor language (English, Dutch, German, French and Spanish).
+A MakeCode extension for the micro:bit that brings a **wooden classroom robot**
+to life. The robot pulls faces through a ring of **16 NeoPixels** that form a
+colorful face with **eyes, a nose, a mouth and lips**, and it has **moving arms**
+and a **dashboard**. At the same time it is a **blackboard**: children in the
+class can project their own micro:bit onto the robot and control it, either by
+plugging in physically or wirelessly with a **remote controller**. The blocks
+are localized and follow the editor language (English, Dutch, German, French and
+Spanish).
 
 ## About microbitrobot
 
