@@ -140,6 +140,14 @@ input.onButtonPressed(Button.A, function () {
 })
 ```
 
+## For AI agents
+
+If you are an **AI coding agent** (for example a Copilot) asked to program this
+robot with MakeCode, read [**AGENTS.md**](AGENTS.md) first. It documents the
+authoritative hardware facts, the full block API, the wiring / pin diagrams and
+worked examples, so you can generate correct code without asking follow‑up
+questions.
+
 ## Tutorials
 
 * [Get started with the robot](https://makecode.microbit.org/#tutorial:https://github.com/peterheldens/pxt-robotph/blob/main/getting-started.md) - set up the robot face and make it smile.

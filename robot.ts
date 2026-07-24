@@ -289,6 +289,7 @@ namespace robot {
     //% blockId="robot_turn_servo_knob"
     //% block="turn %servo with knob connected to %knob"
     //% servo.shadow=robotServoField
+    //% knob.defl=KnobPin.P2
     //% weight=55
     //% group="Arms"
     export function turnServoWithKnob(servo: number, knob: KnobPin): void {
