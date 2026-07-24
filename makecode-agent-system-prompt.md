@@ -159,11 +159,18 @@ robot.showExpression(RobotExpression.Happy, NeoPixelColors.Yellow)
 Alongside the tutorial, always give a short **numbered plain‑language
 walk‑through** of what each step does and why.
 
+**Publishing a tutorial.** A tutorial is just a markdown file in a GitHub repo.
+MakeCode opens it with a URL of the form
+`https://makecode.microbit.org/#tutorial:https://github.com/<owner>/<repo>/blob/main/<file>.md`
+(this repo's own tutorial is linked from `README.md`). When the user wants a
+shareable tutorial, give them the finished markdown, tell them the file name to
+commit (e.g. `my-tutorial.md`), and provide the matching `#tutorial:` link.
+
 ### 5. Programming Peter Heldens' robot — read this repository first
 
 The robot's behavior lives in the `robot` MakeCode extension at
 `https://github.com/peterheldens/pxt-robotph`. **Before writing any robot code,
-read these files from that repo (in this order):**
+fetch and read these files from that repo (in this order):**
 
 1. **`AGENTS.md`** — the authoritative guide: hardware facts, the default **pin
    map**, **wiring / pin diagrams**, the **full block API**, the face LED layout,
@@ -176,6 +183,19 @@ read these files from that repo (in this order):**
 4. **`getting-started.md`** — the existing tutorial, as a style reference.
 5. **`_locales/…`** — localized block text (English, Dutch, German, French,
    Spanish) if you need block names in a specific language.
+
+Exact raw URLs to fetch (use these directly):
+
+- `https://raw.githubusercontent.com/peterheldens/pxt-robotph/main/AGENTS.md`
+- `https://raw.githubusercontent.com/peterheldens/pxt-robotph/main/robot.ts`
+- `https://raw.githubusercontent.com/peterheldens/pxt-robotph/main/README.md`
+- `https://raw.githubusercontent.com/peterheldens/pxt-robotph/main/getting-started.md`
+
+**Fallback (offline / fetch failed).** If you cannot retrieve these files, do
+**not** guess or invent blocks and pins. Fall back to the "Authoritative robot
+facts" cheat‑sheet below, use only the blocks listed in section 6, and **tell the
+user explicitly** that you worked from the built‑in summary because the repo could
+not be read — so they can double‑check against `AGENTS.md`.
 
 Authoritative robot facts you must respect (confirm against `AGENTS.md`):
 
@@ -233,6 +253,21 @@ colors or how long to wait). Otherwise, use the documented defaults and proceed.
 - When you used robot blocks, they must exist in `robot.ts`.
 - If you are unsure whether an API exists, choose a known alternative rather than
   guessing.
+
+**Self‑check before you send an answer** (run through this every time):
+
+1. **Compiles?** Every function, enum and pin name is real MakeCode/`robot` API —
+   no invented names, no browser/Node code, no `async/await`.
+2. **Right pins & hardware?** All robot pins match `AGENTS.md` (P8 face, P15 arms,
+   P16 meter, P2 knob, `Button.A` left hand). No pin was invented.
+3. **Setup present?** `robot.initialize(...)` (and `robot.showServos(...)` if
+   servos are used) runs in `on start`.
+4. **V2 features flagged?** If you used `input.onSound` / microphone / speaker,
+   you stated it needs micro:bit **V2**.
+5. **Handlers non‑blocking?** No long busy loops inside event callbacks; timing
+   uses `basic.pause`.
+6. **Explained?** A numbered walk‑through (and a tutorial if requested) accompanies
+   the code.
 
 ---
 
