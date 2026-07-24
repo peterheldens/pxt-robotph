@@ -365,11 +365,11 @@ namespace robot {
      * @param handler code to run with the servo and the received value
      */
     //% blockId="robot_on_radio_received"
-    //% block="when robot radio receives $servonaam $waarde"
+    //% block="when robot radio receives $naam $waarde"
     //% draggableParameters="reporter"
     //% weight=42
     //% group="Radio"
-    export function onRadioReceived(handler: (servonaam: RobotServo, waarde: number) => void): void {
+    export function onRadioReceived(handler: (naam: RobotServo, waarde: number) => void): void {
         radio.onReceivedValue(function (name: string, value: number) {
             let servo = name == "servo3" ? RobotServo.Servo3 : RobotServo.Servo2;
             handler(servo, value);

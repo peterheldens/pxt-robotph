@@ -33,5 +33,5 @@
     "{id:group}Expressions": "Expressions",
     "{id:group}Setup": "Setup",
     "robot.showServos|block": "show servos in simulator on servo2 %servo2pin servo3 %servo3pin",
-    "robot.onRadioReceived|block": "when robot radio receives $servonaam $waarde"
+    "robot.onRadioReceived|block": "when robot radio receives $naam $waarde"
 }

@@ -4,8 +4,8 @@ robot.setBrightness(60)
 robot.mirrorToScreen(true)
 robot.showServos(AnalogPin.P15, AnalogPin.P16)
 
-robot.onRadioReceived(function (servonaam, waarde) {
-    robot.turnServoToValue(servonaam, waarde)
+robot.onRadioReceived(function (naam, waarde) {
+    robot.turnServoToValue(naam, waarde)
 })
 
 basic.forever(function () {
