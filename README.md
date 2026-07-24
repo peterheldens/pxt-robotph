@@ -148,48 +148,51 @@ input.onButtonPressed(Button.A, function () {
 
 ### Nederlands
 
-Dit is de extensie voor **microbitrobot**: een combinatie van een **robot** en
-een **schoolbord**, gemaakt voor gebruik in de klas. De robot is een houten
-zelfbouwkit. Een servomotor beweegt de **armen**, een servomotor stuurt het
-**dashboard**, en er is een **analoge meter**. **NeoPixels** vormen de antenne,
-ogen, neus, mond en lippen. Er zijn een **drukknop** en een **bibberspiraal**,
-allemaal bedraad via het **Kitronik Simple Servo Control Board for BBC
-micro:bit**. Met de **afstandsbediening**
-pluggen kinderen hun eigen micro:bit-project op het robotbord en besturen ze het
-direct.
+Dit is de extensie voor **microbitrobot**: een **houten robot** die **gezichten
+trekt** met een ring van **16 NeoPixels** die een **kleurrijk gezicht** vormen
+met **ogen, neus, mond en lippen**. Hij heeft **bewegende armen** en een
+**dashboard**, en is tegelijk een **schoolbord**: kinderen in de klas projecteren
+hun eigen micro:bit op de robot en besturen hem — fysiek ingeplugd of draadloos
+met een **afstandsbediening**. Een servomotor beweegt de armen, een servomotor
+stuurt het dashboard en er is een **analoge meter**. Er zijn ook een **drukknop**
+en een **bibberspiraal**, allemaal bedraad via het **Kitronik Simple Servo
+Control Board for BBC micro:bit**.
 
 ### Deutsch
 
-Dies ist die Erweiterung für **microbitrobot**: eine Kombination aus einem
-**Roboter** und einer **Tafel**, für den Einsatz im Klassenzimmer. Der Roboter
-ist ein Selbstbausatz aus Holz. Ein Servomotor bewegt die **Arme**, ein
-Servomotor steuert das **Dashboard**, und es gibt eine **analoge Anzeige**.
-**NeoPixels** bilden Antenne, Augen, Nase, Mund und Lippen. Es gibt einen
-**Taster** und eine **Vibrationsspirale**, alles über das **Kitronik Simple
-Servo Control Board for BBC micro:bit** verkabelt. Mit der **Fernbedienung** stecken Kinder ihr
-eigenes micro:bit-Projekt an die Robotertafel und steuern es direkt.
+Dies ist die Erweiterung für **microbitrobot**: ein **Holzroboter**, der mit
+einem Ring aus **16 NeoPixels** **Gesichter zieht**, die ein **farbenfrohes
+Gesicht** mit **Augen, Nase, Mund und Lippen** bilden. Er hat **bewegliche Arme**
+und ein **Dashboard** und ist zugleich eine **Tafel**: Kinder im Klassenzimmer
+projizieren ihr eigenes micro:bit auf den Roboter und steuern ihn – physisch
+eingesteckt oder drahtlos mit einer **Fernbedienung**. Ein Servomotor bewegt die
+Arme, ein Servomotor steuert das Dashboard, und es gibt eine **analoge Anzeige**.
+Außerdem gibt es einen **Taster** und eine **Vibrationsspirale**, alles über das
+**Kitronik Simple Servo Control Board for BBC micro:bit** verkabelt.
 
 ### Français
 
-Ceci est l'extension pour **microbitrobot** : une combinaison d'un **robot** et
-d'un **tableau**, conçue pour la classe. Le robot est un kit à construire
-soi-même en bois. Un servomoteur actionne les **bras**, un servomoteur pilote le
-**tableau de bord**, et il y a une **jauge analogique**. Des **NeoPixels**
-forment l'antenne, les yeux, le nez, la bouche et les lèvres. Il y a un **bouton
-poussoir** et une **spirale vibrante**, le tout câblé via le **Kitronik Simple
-Servo Control Board for BBC micro:bit**. Avec la **télécommande**, les enfants branchent leur propre projet
-micro:bit sur le tableau robot et le commandent directement.
+Ceci est l'extension pour **microbitrobot** : un **robot en bois** qui **fait des
+grimaces** grâce à un anneau de **16 NeoPixels** formant un **visage coloré** avec
+des **yeux, un nez, une bouche et des lèvres**. Il possède des **bras mobiles** et
+un **tableau de bord**, et c'est en même temps un **tableau** : les enfants de la
+classe projettent leur propre micro:bit sur le robot et le commandent — branché
+physiquement ou sans fil avec une **télécommande**. Un servomoteur actionne les
+bras, un servomoteur pilote le tableau de bord, et il y a une **jauge analogique**.
+Il y a aussi un **bouton poussoir** et une **spirale vibrante**, le tout câblé via
+le **Kitronik Simple Servo Control Board for BBC micro:bit**.
 
 ### Español
 
-Esta es la extensión para **microbitrobot**: una combinación de un **robot** y
-una **pizarra**, diseñada para el aula. El robot es un kit de autoconstrucción
-de madera. Un servomotor mueve los **brazos**, un servomotor acciona el
-**tablero**, y hay un **medidor analógico**. Los **NeoPixels** forman la antena,
-los ojos, la nariz, la boca y los labios. Hay un **botón pulsador** y una
+Esta es la extensión para **microbitrobot**: un **robot de madera** que **pone
+caras** mediante un anillo de **16 NeoPixels** que forman un **rostro colorido**
+con **ojos, nariz, boca y labios**. Tiene **brazos móviles** y un **tablero**, y a
+la vez es una **pizarra**: los niños de la clase proyectan su propio micro:bit en
+el robot y lo controlan, conectado físicamente o de forma inalámbrica con un
+**mando a distancia**. Un servomotor mueve los brazos, un servomotor acciona el
+tablero y hay un **medidor analógico**. También hay un **botón pulsador** y una
 **espiral vibratoria**, todo cableado a través del **Kitronik Simple Servo
-Control Board for BBC micro:bit**. Con el **mando a distancia**, los niños conectan su propio proyecto
-micro:bit a la pizarra robot y lo controlan directamente.
+Control Board for BBC micro:bit**.
 
 ## Supported targets
 
