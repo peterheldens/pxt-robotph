@@ -236,7 +236,7 @@ namespace robot {
     //% blockId=robotServoField
     //% block="%servo"
     //% blockHidden=true
-    export function servoValue(servo: RobotServo): RobotServo {
+    export function servoValue(servo: RobotServo): number {
         return servo;
     }
 
@@ -250,7 +250,7 @@ namespace robot {
     //% servo.shadow=robotServoField
     //% weight=60
     //% group="Arms"
-    export function turnServoToPosition(servo: RobotServo, position: ArmPosition): void {
+    export function turnServoToPosition(servo: number, position: ArmPosition): void {
         let degrees = 90;
         switch (position) {
             case ArmPosition.High:
@@ -277,7 +277,7 @@ namespace robot {
     //% value.min=0 value.max=180 value.defl=90
     //% weight=58
     //% group="Arms"
-    export function turnServoToValue(servo: RobotServo, value: number): void {
+    export function turnServoToValue(servo: number, value: number): void {
         zetServo(servo, Math.clamp(0, 180, value));
     }
 
@@ -291,7 +291,7 @@ namespace robot {
     //% servo.shadow=robotServoField
     //% weight=55
     //% group="Arms"
-    export function turnServoWithKnob(servo: RobotServo, knob: KnobPin): void {
+    export function turnServoWithKnob(servo: number, knob: KnobPin): void {
         let analogPin = AnalogPin.P0;
         switch (knob) {
             case KnobPin.P0:
@@ -321,7 +321,7 @@ namespace robot {
     //% on.shadow="toggleOnOff" on.defl=true
     //% weight=50
     //% group="Arms"
-    export function reverseServo(servo: RobotServo, on: boolean): void {
+    export function reverseServo(servo: number, on: boolean): void {
         if (servo == RobotServo.Servo3) {
             omkeerServo3 = on;
         } else {
@@ -343,7 +343,7 @@ namespace robot {
     //% end.min=0 end.max=180 end.defl=180
     //% weight=45
     //% group="Arms"
-    export function limitServoRange(servo: RobotServo, start: number, end: number): void {
+    export function limitServoRange(servo: number, start: number, end: number): void {
         start = Math.clamp(0, 180, start);
         end = Math.clamp(0, 180, end);
         if (start < end) {
@@ -387,7 +387,7 @@ namespace robot {
     //% draggableParameters="reporter"
     //% weight=42
     //% group="Radio"
-    export function onRadioReceived(handler: (naam: RobotServo, waarde: number) => void): void {
+    export function onRadioReceived(handler: (naam: number, waarde: number) => void): void {
         radio.onReceivedValue(function (name: string, value: number) {
             let servo = name == "servo3" ? RobotServo.Servo3 : RobotServo.Servo2;
             handler(servo, value);
@@ -405,11 +405,11 @@ namespace robot {
     //% naam.shadow=robotServoField
     //% weight=40
     //% group="Radio"
-    export function radioSendValue(naam: RobotServo, waarde: number): void {
+    export function radioSendValue(naam: number, waarde: number): void {
         radio.sendValue(naam == RobotServo.Servo3 ? "servo3" : "servo2", waarde);
     }
 
-    function zetServo(servo: RobotServo, degrees: number): void {
+    function zetServo(servo: number, degrees: number): void {
         let inverted = servo == RobotServo.Servo3
             ? omkeerServo3
             : omkeerServo2;
