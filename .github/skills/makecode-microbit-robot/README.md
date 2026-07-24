@@ -36,6 +36,11 @@ On Windows PowerShell:
 Copy-Item -Recurse .github\skills\makecode-microbit-robot "$HOME\your-project\.github\skills\"
 ```
 
+**Option B — let an agent pull it from GitHub:** paste the ready-made prompt in
+[`bootstrap-prompt.md`](bootstrap-prompt.md) into your agent (Microsoft Scout,
+Copilot, …). It fetches this repo's files by their raw URLs, reads them as ground
+truth, and writes the skill into the current project's `.github/skills/`.
+
 **Option B — with the skills CLI (if the skill is published in a catalog):**
 
 ```bash
