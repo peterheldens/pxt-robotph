@@ -167,7 +167,7 @@ namespace robot {
     //% color.shadow="colorNumberPicker"
     //% weight=70
     //% group="Expressions"
-    //% parts="robotface microservo"
+    //% parts="robotface robotservo2"
     export function showExpression(expression: RobotExpression, color: number): void {
         initGezicht();
         gezicht.clear();
@@ -221,7 +221,7 @@ namespace robot {
     //% on.shadow="toggleOnOff" on.defl=true
     //% weight=64
     //% group="Expressions"
-    //% parts="microservo"
+    //% parts="robotservo2"
     export function mirrorToArms(on: boolean): void {
         spiegelNaarArmen = on;
     }
@@ -233,7 +233,7 @@ namespace robot {
      */
     //% blockId="robot_turn_servo_position"
     //% block="turn %servo to position %position"
-    //% parts="microservo"
+    //% parts="robotservo2 robotservo3"
     //% weight=60
     //% group="Arms"
     export function turnServoToPosition(servo: RobotServo, position: ArmPosition): void {
@@ -262,7 +262,7 @@ namespace robot {
      */
     //% blockId="robot_turn_servo_knob"
     //% block="turn %servo with knob connected to %knob"
-    //% parts="microservo"
+    //% parts="robotservo2 robotservo3"
     //% weight=55
     //% group="Arms"
     export function turnServoWithKnob(servo: RobotServo, knob: KnobPin): void {
