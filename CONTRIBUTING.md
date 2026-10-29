@@ -28,6 +28,10 @@ package `mkc`. The first build downloads a copy of the micro:bit editor into
 
 ## Everyday commands
 
+Brightness regression tests run with `npm ci --ignore-scripts` followed by
+`npm test`. They execute `robot.ts` with a NeoPixel range test double; the
+MakeCode build below checks the real extension types separately.
+
 Run these from the repository root (the folder with `pxt.json`):
 
 | Command | What it does |

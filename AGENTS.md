@@ -159,6 +159,8 @@ robot.initialize(pin?: DigitalPin, count?: number, mode?: NeoPixelMode): void
 
 robot.setBrightness(brightness: number): void
 // brightness 0–255, default 40.
+// Applies to subsequent colors and expressions on all face parts.
+// Reapply a color/expression to update LEDs that are already lit.
 
 robot.showServos(servo2pin?: AnalogPin, servo3pin?: AnalogPin): void
 // Defaults: servo2pin = AnalogPin.P15, servo3pin = AnalogPin.P16
@@ -420,5 +422,4 @@ These files share facts and must be updated together:
 *This file documents the public API and hardware of the `robot` extension in this
 repository. When the extension changes (new blocks, changed pins), update this
 file so agents keep generating correct code.*
-<!-- last verified: 2026-07-24, pxt.json v1.0.53 -->
-
+<!-- last verified: 2026-10-29, pxt.json v1.0.54 -->

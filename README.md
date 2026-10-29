@@ -47,6 +47,10 @@ robot.setBrightness(60)
 robot.showExpression(RobotExpression.Happy, NeoPixelColors.Yellow)
 ```
 
+Brightness applies to subsequent colors and expressions on every face part,
+including the eyes, nose and lips. After changing brightness, set the color
+or show the expression again to update LEDs that are already lit.
+
 Use ``||robot.setColor||`` to color a single part of the face, and
 ``||robot.clear||`` to turn a part off:
 
@@ -227,4 +231,3 @@ Control Board for BBC micro:bit**.
 ## License
 
 MIT
-

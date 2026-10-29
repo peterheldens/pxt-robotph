@@ -547,6 +547,7 @@ namespace robot {
     }
 
     function vul(deel: neopixel.Strip, color: number): void {
+        deel.setBrightness(gezicht.brightness);
         for (let i = 0; i < deel.length(); i++) {
             deel.setPixelColor(i, color);
         }

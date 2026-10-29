@@ -27,5 +27,10 @@ jobs:
       - name: Install MakeCode CLI
         run: npm install -g makecode
 
+      - name: Test face brightness
+        run: |
+          npm ci --ignore-scripts
+          npm test
+
       - name: Type-check the extension (JavaScript build)
         run: makecode build -j
